@@ -8,13 +8,10 @@ const styles = StyleSheet.create({
         border: '2px solid red',
         padding:'15px 30px'
     },
-    doc: {
-        border: '2px solid red',
-    }
 });
 
 const Template = () => (
-    <Document style={styles.doc}>
+    <Document>
         <Page size="A4" style={styles.page}>
         <Image src={'./banner.jpeg'}/>
             <View>

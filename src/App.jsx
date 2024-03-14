@@ -10,7 +10,7 @@ import Moonlighting from './components/Moonlighting';
 import MoonlightingInput from './components/MoonlightingInput';
 import Invoice from './components/Invoice';
 import InvoiceInput from './components/InvoiceInput';
-import Template from './components/Template' 
+import Template from './components/Template'
 import { PDFViewer } from '@react-pdf/renderer';
 import { Routes, Route } from 'react-router-dom'
 import { RecoilRoot } from 'recoil';
@@ -19,37 +19,34 @@ function App() {
 
   return (
     <>
-      {/* <RecoilRoot> */}
-      {/* <Routes> */}
-      {/* <Route path='/' element={<Login />} /> */}
-      {/* <Route path='/' element={<OfferLetterInput />} /> */}
-      {/* <Route path='/home' element={<Home />} /> */}
-      {/* <Route path='/offer-letter-input' element={<OfferLetterInput />} /> */}
-      {/* <Route path='/offer-letter' element={<OfferLetter />} /> */}
-      {/* <Route path='/nda-bond-input' element={<NDABondInput />} /> */}
-      {/* <Route path='/nda-bond' element={<NDABond />} /> */}
-      {/* <Route path='/moonlighting-input' element={<MoonlightingInput />} /> */}
-      {/* <Route path='/moonlighting' element={ */}
-      <div>
+      <RecoilRoot>
+        <Routes>
+          <Route path='/' element={<Login />} />
+          <Route path='/home' element={<Home />} />
 
-        {/* <Moonlighting /> */}
-      <PDFViewer height={window.innerHeight} width={'100%'}>
-        <Template />
-      </PDFViewer>
-      </div>
-      {/* </> */}
-      {/* } /> */}
-      {/* <Route path='/invoice-input' element={<InvoiceInput />} /> */}
-      {/* <Route path='/invoice' element={ */}
-      {/* <PDFViewer height={window.innerHeight} width={'100%'} showToolbar> */}
-      {/* <Invoice /> */}
-      {/* </PDFViewer> */}
-      {/* } /> */}
-      {/* <PDFViewer height={window.innerHeight} width={'100%'} showToolbar> */}
-      {/* </PDFViewer> */}
-      {/* </Routes> */}
-      {/* </RecoilRoot> */}
+          <Route path='/offer-letter-input' element={<OfferLetterInput />} />
+          <Route path='/offer-letter' element={
+            <PDFViewer height={window.innerHeight} width={'100%'}>
+              <OfferLetter />
+            </PDFViewer>
+          } />
 
+          <Route path='/nda-bond-input' element={<NDABondInput />} />
+          <Route path='/nda-bond' element={
+            <PDFViewer height={window.innerHeight} width={'100%'}>
+              <NDABond />
+            </PDFViewer>
+          } />
+
+          <Route path='/moonlighting-input' element={<MoonlightingInput />} />
+          <Route path='/moonlighting' element={
+            <PDFViewer height={window.innerHeight} width={'100%'}>
+              <Moonlighting />
+            </PDFViewer>
+          } />
+
+        </Routes>
+      </RecoilRoot>
     </>
   )
 }

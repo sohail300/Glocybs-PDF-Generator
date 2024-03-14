@@ -14,3 +14,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@font-face {
+  font-family: 'ArialMTnormal';
+  src: local('ArialMTnormal'),
+       url('./assets/fonts/arialmt-normal.ttf') format('ttf');
+}
