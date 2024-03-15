@@ -1,9 +1,13 @@
 /* eslint-disable react/prop-types */
-import { Page, Text, View, Document, StyleSheet, Image, Font } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet, Image, Font, Link } from '@react-pdf/renderer';
 import currentDate from '../utils/currentDate';
 import MyCustomFont from '../assets/fonts/arialmt-normal.ttf'
 import imageUrl from '../../public/A4.png'
 import Banner from './Banner';
+import Footer from './Footer';
+// import LanguageIcon from '@mui/icons-material/Language';
+// import LinkedInIcon from '@mui/icons-material/LinkedIn';
+// import InstagramIcon from '@mui/icons-material/Instagram';
 
 Font.register({ family: 'ArialMTnormal', src: MyCustomFont });
 
@@ -25,7 +29,7 @@ const styles = StyleSheet.create({
   },
   bodyContainer: {
     padding: '36px 44px',
-
+    height: '100%',
   },
   heading: {
     fontSize: 18,
@@ -49,55 +53,78 @@ const Moonlighting = () => (
       <View style={styles.container}>
         <Image src={imageUrl} style={styles.backgroundImage} />
         <View style={styles.bodyContainer}>
-        <Banner />
-        <View style={styles.date}>
-          <Text>{currentDate}</Text>
-        </View>
-        <View style={styles.heading}>
-          <Text>Company Policy Regarding Outside Employment</Text>
-        </View>
-        <View style={styles.content}>
-          <Text>Dear Sohail, </Text>
-        </View>
-        <View style={styles.content}>
-          <Text>This note serves as a reminder of our company policy regarding outside employment, also
-            known as <Text style={{ fontFamily: 'Helvetica-Bold' }}>"moonlighting"</Text>. It is important for all employees to understand our expectations and
-            avoid potential conflicts of interest. </Text>
-        </View>
-        <View style={styles.content}>
-          <Text>As per company policy, any employee actively engaged in full-time employment with <Text style={{ fontFamily: 'Helvetica-Bold' }}>GLOCYBS</Text> is prohibited from taking on concurrent employment with another company without prior written
-            approval. This applies to any paid or unpaid work outside of your designated working hours with <Text style={{ fontFamily: 'Helvetica-Bold' }}>GLOCYBS</Text>.</Text>
-        </View>
-        <View style={styles.content}>
-          <Text>Engaging in outside employment without approval may result in disciplinary action, up to and
-            including termination of your employment with <Text style={{ fontFamily: 'Helvetica-Bold' }}>GLOCYBS</Text>. If you are considering taking on
-            additional work outside the company, please be sure to reach out to your manager or the
-            Human Resources department to discuss and obtain the necessary approvals. </Text>
-        </View>
-        <View style={styles.content}>
-          <Text>We understand that employees may have personal or professional reasons for seeking
-            additional work outside the company. However, it is crucial to ensure that any such
-            commitments do not impact your primary responsibilities and performance at <Text style={{ fontFamily: 'Helvetica-Bold' }}>GLOCYBS</Text>.</Text>
-        </View>
+          {/* BANNER */}
+          <Banner />
+          <View style={styles.date}>
+            <Text>{currentDate}</Text>
+          </View>
+          <View style={styles.heading}>
+            <Text>Company Policy Regarding Outside Employment</Text>
+          </View>
+          <View style={styles.content}>
+            <Text>Dear Sohail, </Text>
+          </View>
+          <View style={styles.content}>
+            <Text>This note serves as a reminder of our company policy regarding outside employment, also
+              known as <Text style={{ fontFamily: 'Helvetica-Bold' }}>"moonlighting"</Text>. It is important for all employees to understand our expectations and
+              avoid potential conflicts of interest. </Text>
+          </View>
+          <View style={styles.content}>
+            <Text>As per company policy, any employee actively engaged in full-time employment with <Text style={{ fontFamily: 'Helvetica-Bold' }}>GLOCYBS</Text> is prohibited from taking on concurrent employment with another company without prior written
+              approval. This applies to any paid or unpaid work outside of your designated working hours with <Text style={{ fontFamily: 'Helvetica-Bold' }}>GLOCYBS</Text>.</Text>
+          </View>
+          <View style={styles.content}>
+            <Text>Engaging in outside employment without approval may result in disciplinary action, up to and
+              including termination of your employment with <Text style={{ fontFamily: 'Helvetica-Bold' }}>GLOCYBS</Text>. If you are considering taking on
+              additional work outside the company, please be sure to reach out to your manager or the
+              Human Resources department to discuss and obtain the necessary approvals. </Text>
+          </View>
+          <View style={styles.content}>
+            <Text>We understand that employees may have personal or professional reasons for seeking
+              additional work outside the company. However, it is crucial to ensure that any such
+              commitments do not impact your primary responsibilities and performance at <Text style={{ fontFamily: 'Helvetica-Bold' }}>GLOCYBS</Text>.</Text>
+          </View>
 
-        <View style={styles.content}>
-          <Text>We encourage you to reach out with any questions or concerns you may have regarding this
-            policy. </Text>
-        </View>
+          <View style={styles.content}>
+            <Text>We encourage you to reach out with any questions or concerns you may have regarding this
+              policy. </Text>
+          </View>
 
-        <View style={styles.content}>
-          <Text>Sincerely, </Text>
-        </View>
+          <View style={styles.content}>
+            <Text>Sincerely, </Text>
+          </View>
 
-        <View>
-          <Text>Shivansh Mishra</Text>
-        </View>
-        <View>
-          <Text>(Founder & Director)</Text>
-        </View>
-        <View>
-          <Text>GLOCYBS PVT. LTD.</Text>
-        </View>
+          <View>
+            <Text>Shivansh Mishra</Text>
+          </View>
+          <View>
+            <Text>(Founder & Director)</Text>
+          </View>
+          <View>
+            <Text>GLOCYBS PVT. LTD.</Text>
+          </View>
+          <View style={{ display: 'flex', flexDirection: 'column' }}>
+            <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginTop: 60 }}>
+              <View style={{ display: 'flex', flexDirection: 'row' }}>
+                <Text>Employee Signature</Text>
+                <Link src='https://esign.com/' style={{ borderBottom: '2px solid black', width: 240, marginLeft: 4 }} >
+                </Link>
+              </View>
+              <View style={{ display: 'flex', flexDirection: 'row' }}>
+                <Text>Date</Text>
+                <View style={{ borderBottom: '1px solid black', width: 100, marginLeft: 4 }}></View>
+              </View>
+            </View>
+            <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginTop: 20 }}>
+              <View style={{ display: 'flex', flexDirection: 'row' }}>
+                <Text>Employee Printed Name</Text>
+                <View style={{ borderBottom: '1px solid black', width: 240, marginLeft: 4 }}></View>
+              </View>
+            </View>
+          </View>
+
+          {/* FOOTER */}
+          <Footer />
         </View>
       </View>
     </Page>

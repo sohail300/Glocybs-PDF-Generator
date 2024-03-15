@@ -13,7 +13,6 @@ export default {
         'gray1': '#d8d8d8',
         'gray2': '#777',
         'linkblue': '#0066CC',
-        
       }
     },
   },
