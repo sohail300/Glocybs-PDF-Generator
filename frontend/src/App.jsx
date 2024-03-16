@@ -78,10 +78,15 @@ function App() {
           } />
 
           <Route path='/invoice-input' element={<InvoiceInput />} />
-          <Route path='/invoice' element={
+          <Route path='/invoice-view' element={
             <PDFViewer height={window.innerHeight} width={'100%'}>
               <Invoice />
             </PDFViewer>
+          } />
+          <Route path='/moonlighting-download' element={
+            <PDFDownloadLink document={<Invoice />} fileName="invoice.pdf">
+              {({ blob, url, loading, error }) => (loading ? <Loader /> : <Download />)}
+            </PDFDownloadLink>
           } />
 
         </Routes>
