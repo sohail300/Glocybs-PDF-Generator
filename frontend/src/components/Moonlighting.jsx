@@ -49,7 +49,6 @@ const styles = StyleSheet.create({
 });
 
 function Moonlighting() {
-  const name = useRecoilValue(nameState);
 
   return (
     <Document>
