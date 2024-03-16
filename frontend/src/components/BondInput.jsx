@@ -25,7 +25,7 @@ const BondInput = () => {
   }
 
   function handleSubmit() {
-    navigate('/nda');
+    navigate('/bond');
   }
 
   return (
