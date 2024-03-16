@@ -62,6 +62,12 @@ const styles = StyleSheet.create({
 });
 
 const NDABond = () => {
+  const queryParams = new URLSearchParams(window.location.search);
+  const name = queryParams.get('name');
+  const day = queryParams.get('day');
+  const month = queryParams.get('month');
+  const year = queryParams.get('year');
+
   return (
     <Document>
       <Page size="A4" style={styles.page}>
@@ -75,8 +81,8 @@ const NDABond = () => {
             </View>
             <View style={styles.content}>
               <Text>This EMPLOYEE NON-DISCLOSURE AGREEMENT, hereinafter known as the “Agreement”, is
-                entered into between <Text style={{ fontFamily: 'Helvetica-Bold' }}>Sohail</Text> and <Text style={{ fontFamily: 'Helvetica-Bold' }}>Glocybs Pvt.Ltd.</Text> (“Company”), collectively known as the
-                “Parties” as of the 1st of February, 2024 (the “Effective Date”).</Text>
+                entered into between <Text style={{ fontFamily: 'Helvetica-Bold' }}>{name}</Text> and <Text style={{ fontFamily: 'Helvetica-Bold' }}>Glocybs Pvt.Ltd.</Text> (“Company”), collectively known as the
+                “Parties” as of the {day} {month}, {year} (the “Effective Date”).</Text>
             </View>
             <View style={styles.content}>
               <Text style={styles.subheading}>Article I: Scope of Agreement</Text>
@@ -320,13 +326,13 @@ const NDABond = () => {
           <View style={styles.bodyContainer}>
             {/* BANNER */}
             <Banner />
-            
+
             <View style={styles.content}>
               <Text>IN WITNESS WHEREOF, the Parties hereto agree to the terms of this Agreement and signed
                 on the dates written below.</Text>
             </View>
 
-            <View style={{marginBottom: '10px'}}>
+            <View style={{ marginBottom: '10px' }}>
               <Text>For and on the behalf of The Company,</Text>
             </View>
             <View>

@@ -55,6 +55,12 @@ const styles = StyleSheet.create({
 });
 
 const Bond = () => {
+    const queryParams = new URLSearchParams(window.location.search);
+    const name = queryParams.get('name');
+    const day = queryParams.get('day');
+    const month = queryParams.get('month');
+    const year = queryParams.get('year');
+
     return (
         <Document>
             <Page size="A4" style={styles.page}>
@@ -68,8 +74,8 @@ const Bond = () => {
                         </View>
                         <View style={styles.content}>
                             <Text>This EMPLOYEE NON-DISCLOSURE AGREEMENT, hereinafter known as the “Agreement”, is
-                                entered into between <Text style={{ fontFamily: 'Helvetica-Bold' }}>Sohail</Text> and <Text style={{ fontFamily: 'Helvetica-Bold' }}>Glocybs Pvt.Ltd.</Text> (“Company”), collectively known as the
-                                “Parties” as of the 1st of February, 2024 (the “Effective Date”).</Text>
+                                entered into between <Text style={{ fontFamily: 'Helvetica-Bold' }}>{name}</Text> and <Text style={{ fontFamily: 'Helvetica-Bold' }}>Glocybs Pvt.Ltd.</Text> (“Company”), collectively known as the
+                                “Parties” as of the {day} {month}, {year} (the “Effective Date”).</Text>
                         </View>
 
                         <View style={styles.content}>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const OfferLetterInput = () => {
-  const navigate= useNavigate();
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [position, setPosition] = useState('');
   const [period, setPeriod] = useState('');
@@ -45,7 +45,22 @@ const OfferLetterInput = () => {
   }
 
   function handleSubmit() {
-    navigate('/offer-letter'); 
+    if (name == '' || day == '' || month == '' || year == '' || position == '' || period == '' || post == '' || stipend == '') {
+      alert('Enter Details!')
+    } else {
+      navigate('/offer-letter');
+      const queryParams = new URLSearchParams({
+        name,
+        position,
+        period,
+        post,
+        day,
+        month,
+        year,
+        stipend
+      }).toString();
+      navigate(`/offer-letter?${queryParams}`);
+    }
   }
 
   return (
@@ -91,6 +106,18 @@ const OfferLetterInput = () => {
               value={month}
             >
               <option value="" disabled selected>Month</option>
+              <option value="January">January</option>
+              <option value="February">February</option>
+              <option value="March">March</option>
+              <option value="April">April</option>
+              <option value="May">May</option>
+              <option value="June">June</option>
+              <option value="July">July</option>
+              <option value="August">August</option>
+              <option value="September">September</option>
+              <option value="October">October</option>
+              <option value="November">November</option>
+              <option value="December">December</option>
             </select>
             <input
               type="text"

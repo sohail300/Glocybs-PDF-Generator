@@ -1,23 +1,21 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
-import { nameState } from "../store/atoms/details";
 
 const MoonlightingInput = () => {
   const navigate = useNavigate();
-  const [name, setName] = useRecoilState(nameState);
+  const [name, setName] = useState('');
 
-  function handleName(e) {
+  const handleName = (e) => {
     setName(e.target.value)
-    console.log(name)
-  }
+  };
 
   function handleSubmit() {
-    console.log(name)
     if (name == '') {
       alert('Enter Name!')
     } else {
-      navigate('/moonlighting')
+      const queryParams = new URLSearchParams({ name: name }).toString();
+      console.log(queryParams)
+      navigate(`/moonlighting?${queryParams}`);
     }
   }
 
@@ -31,6 +29,7 @@ const MoonlightingInput = () => {
               type="text"
               className="bg-white w-full rounded-md p-2 mb-4 placeholder-black placeholder-opacity-75 border border-solid border-gray1 focus:outline-none focus:border-gray2"
               placeholder="Name"
+              name="name"
               onChange={handleName}
               value={name}
             />

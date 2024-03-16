@@ -14,6 +14,7 @@ import InvoiceInput from './components/InvoiceInput';
 import { PDFViewer } from '@react-pdf/renderer';
 import { Routes, Route } from 'react-router-dom'
 import { RecoilRoot } from 'recoil';
+import { MobilePDFReader, PDFReader  } from 'react-read-pdf';
 
 function App() {
 
@@ -31,9 +32,10 @@ function App() {
             </PDFViewer>
           } />
 
+            {/* http://localhost:5173/nda */}
           <Route path='/nda-input' element={<NDAInput />} />
           <Route path='/nda' element={
-            <PDFViewer height={window.innerHeight} width={'100%'}>
+            <PDFViewer height={window.innerHeight} width={window.innerWidth}>
               <NDA />
             </PDFViewer>
           } />

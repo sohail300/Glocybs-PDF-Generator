@@ -7,6 +7,7 @@ import Footer from './Footer';
 import { nameState } from '../store/atoms/details'
 import { useRecoilValue } from 'recoil';
 import ESign from './ESign';
+import { useLocation } from 'react-router-dom';
 
 Font.register({ family: 'ArialMTnormal', src: MyCustomFont });
 
@@ -49,6 +50,8 @@ const styles = StyleSheet.create({
 });
 
 function Moonlighting() {
+  const queryParams = new URLSearchParams(window.location.search);
+  const name = queryParams.get('name');
 
   return (
     <Document>

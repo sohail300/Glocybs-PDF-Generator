@@ -10,7 +10,92 @@ import ESign from './ESign';
 
 Font.register({ family: 'ArialMTnormal', src: MyCustomFont });
 
+// Create styles
+const styles = StyleSheet.create({
+  page: {
+    backgroundColor: '#ffffff',
+    fontSize: 12,
+    fontFamily: 'Helvetica',
+  },
+  backgroundImage: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    opacity: 0.8
+  },
+  container: {
+    position: 'relative',
+    flex: 1,
+  },
+  bodyContainer: {
+    padding: '36px 44px',
+    height: '100%',
+  },
+  subheading: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    marginBottom: '4px',
+    fontFamily: 'Helvetica',
+  },
+  heading: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    marginBottom: '20px',
+    fontFamily: 'Helvetica-Bold',
+  },
+  date: {
+    fontSize: 12,
+    margin: '16px 0px',
+    textAlign: 'right'
+  },
+  content: {
+    marginBottom: '10px',
+    lineHeight: 1.3
+  },
+  section: {
+    margin: 10,
+    padding: 10,
+  },
+  table: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  tableRow: {
+    flexDirection: 'row',
+  },
+  tableCol: {
+    width: '50%',
+    borderTopWidth: 1,
+    borderTopColor: '#000000',
+    borderLeftWidth: 1,
+    borderLeftColor: '#000000',
+    borderBottomWidth: 1,
+    borderBottomColor: '#000000',
+    borderRightWidth: 1,
+    borderRightColor: '#000000',
+  },
+  columnHeader: {
+    backgroundColor: '#808080',
+    color: '#FFFFFF',
+    padding: 5,
+  },
+  cell: {
+    padding: 5,
+  },
+});
+
 const OfferLetter = () => {
+
+  const queryParams = new URLSearchParams(window.location.search);
+  const name = queryParams.get('name');
+  const position = queryParams.get('position');
+  const period = queryParams.get('period');
+  const post = queryParams.get('post');
+  const stipend = queryParams.get('stipend');
+  const day = queryParams.get('day');
+  const month = queryParams.get('month');
+  const year = queryParams.get('year');
+
   const tableData = [
     {
       components: 'Experience Certificate',
@@ -22,88 +107,13 @@ const OfferLetter = () => {
     },
     {
       components: 'Stipend',
-      eligible: '17000 to 20000/-month',
+      eligible: `RS ${stipend}`,
     },
     {
       components: 'Full time Opportunity',
       eligible: 'If you are a good fit',
     },
   ];
-
-  // Create styles
-  const styles = StyleSheet.create({
-    page: {
-      backgroundColor: '#ffffff',
-      fontSize: 12,
-      fontFamily: 'Helvetica',
-    },
-    backgroundImage: {
-      position: 'absolute',
-      width: '100%',
-      height: '100%',
-      opacity: 0.8
-    },
-    container: {
-      position: 'relative',
-      flex: 1,
-    },
-    bodyContainer: {
-      padding: '36px 44px',
-      height: '100%',
-    },
-    subheading: {
-      fontSize: 14,
-      fontWeight: 'bold',
-      marginBottom: '4px',
-      fontFamily: 'Helvetica',
-    },
-    heading: {
-      fontSize: 14,
-      fontWeight: 'bold',
-      marginBottom: '20px',
-      fontFamily: 'Helvetica-Bold',
-    },
-    date: {
-      fontSize: 12,
-      margin: '16px 0px',
-      textAlign: 'right'
-    },
-    content: {
-      marginBottom: '10px',
-      lineHeight: 1.3
-    },
-    section: {
-      margin: 10,
-      padding: 10,
-    },
-    table: {
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-    },
-    tableRow: {
-      flexDirection: 'row',
-    },
-    tableCol: {
-      width: '50%',
-      borderTopWidth: 1,
-      borderTopColor: '#000000',
-      borderLeftWidth: 1,
-      borderLeftColor: '#000000',
-      borderBottomWidth: 1,
-      borderBottomColor: '#000000',
-      borderRightWidth: 1,
-      borderRightColor: '#000000',
-    },
-    columnHeader: {
-      backgroundColor: '#808080',
-      color: '#FFFFFF',
-      padding: 5,
-    },
-    cell: {
-      padding: 5,
-    },
-  });
-
 
   return (
     <Document>
@@ -117,16 +127,16 @@ const OfferLetter = () => {
               <Text>{currentDate}</Text>
             </View>
             <View style={styles.content}>
-              <Text>Dear Sohail, </Text>
+              <Text>Dear {name}, </Text>
             </View>
             <View style={styles.content}>
               <Text>Congratulations! We are pleased to confirm that you have been selected to work for <Text style={{ fontFamily: 'Helvetica-Bold' }}>GLOCYBS Pvt. Ltd.</Text> We are delighted to make you the following job offer:</Text>
             </View>
             <View style={styles.content}>
-              <Text>The position we are offering you is that of <Text style={{ fontFamily: 'Helvetica-Bold' }}>Internship</Text> in <Text style={{ fontFamily: 'Helvetica-Bold' }}>Full Stack Developer</Text>. This position reports directly to the manager.</Text>
+              <Text>The position we are offering you is that of <Text style={{ fontFamily: 'Helvetica-Bold' }}>{position}</Text> in <Text style={{ fontFamily: 'Helvetica-Bold' }}>{post}</Text> for a period of <Text style={{ fontFamily: 'Helvetica-Bold' }}>{period}</Text>. This position reports directly to the manager.</Text>
             </View>
             <View style={styles.content}>
-              <Text>We would like you to start work on 1st  of February ,2024. Please report us for documentation and orientation. If this date is not acceptable, please contact us immediately. On joining, you will be invited to meeting respective team lead, and you may be required to upload your basic documents. </Text>
+              <Text>We would like you to start work on <Text style={{ fontFamily: 'Helvetica-Bold' }}>{day} {month}, {year}</Text>. Please report us for documentation and orientation. If this date is not acceptable, please contact us immediately. On joining, you will be invited to meeting respective team lead, and you may be required to upload your basic documents. </Text>
             </View>
             <View style={styles.content}>
               <Text>We are confident you will be able to make a significant contribution to the success of <Text style={{ fontFamily: 'Helvetica-Bold' }}>GLOCYBS</Text> and look forward to working with you.</Text>
