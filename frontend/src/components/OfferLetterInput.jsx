@@ -1,5 +1,7 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { baseURL } from "../utils/config";
 
 const OfferLetterInput = () => {
   const navigate = useNavigate();
@@ -11,6 +13,7 @@ const OfferLetterInput = () => {
   const [month, setMonth] = useState('');
   const [year, setYear] = useState('');
   const [stipend, setStipend] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
 
   function handleName(e) {
     setName(e.target.value);
@@ -63,7 +66,26 @@ const OfferLetterInput = () => {
     }
   }
 
+  const api = axios.create({
+    baseURL,
+  });
+
+  async function getId() {
+    const response = await api.get("/me", {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+    });
+    setIsLoading(false);
+  }
+
+  useEffect(() => {
+    getId();
+  }, [])
+
   return (
+    isLoading==false &&
+    <>
     <div className="w-full flex justify-center items-center ">
       <div className="bg-white rounded-xl ml-8 w-2/4 py-16 mt-20 flex flex-col justify-center items-center shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
         <h1 className="font-medium text-black text-2xl mb-8 uppercase text-center">Offer Letter Form</h1>
@@ -150,6 +172,7 @@ const OfferLetterInput = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 

@@ -1,9 +1,12 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { baseURL } from "../utils/config";
 
 const MoonlightingInput = () => {
   const navigate = useNavigate();
   const [name, setName] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleName = (e) => {
     setName(e.target.value)
@@ -19,7 +22,26 @@ const MoonlightingInput = () => {
     }
   }
 
+  const api = axios.create({
+    baseURL,
+  });
+
+  async function getId() {
+    const response = await api.get("/me", {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+    });
+    setIsLoading(false);
+  }
+
+  useEffect(() => {
+    getId();
+  }, [])
+
   return (
+    isLoading==false &&
+    <>
     <div>
       <div className="w-full flex justify-center items-center">
         <div className="bg-white rounded-xl ml-8 w-2/4 py-16 mt-20 flex flex-col justify-center items-center shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
@@ -42,8 +64,8 @@ const MoonlightingInput = () => {
           </div>
         </div>
       </div>
-
     </div>
+    </>
   )
 }
 

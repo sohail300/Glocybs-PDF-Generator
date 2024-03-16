@@ -1,10 +1,17 @@
+import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { baseURL } from "../utils/config";
 
 const Login = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const api = axios.create({
+        baseURL,
+    });
+
 
     function handleEmail(e) {
         setEmail(e.target.value);
@@ -14,8 +21,25 @@ const Login = () => {
         setPassword(e.target.value);
     }
 
+    // async function handleSignup() {
+    //     const response = await api.post("/auth/signup", {
+    //       email: signupEmail,
+    //       password: signupPassword,
+    //     });
+    //     localStorage.setItem("token", response.data);
+    //     setCurrUser("user");
+    //     setIsUserLoggedIn(true);
+    //     navigate("/allcourse");
+    //   }
+
     async function handleLogin() {
-        navigate('/home');
+        const response = await api.post("/auth/login", {
+            email,
+            password,
+        });
+        console.log(response.data)
+        localStorage.setItem("token", response.data);
+        navigate("/home");
     }
 
     return (
