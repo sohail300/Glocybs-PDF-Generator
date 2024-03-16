@@ -1,5 +1,4 @@
 import './App.css'
-import Form from './components/Form'
 import Login from './components/Login';
 import Home from './components/Home';
 import OfferLetter from './components/OfferLetter';
@@ -10,7 +9,6 @@ import Moonlighting from './components/Moonlighting';
 import MoonlightingInput from './components/MoonlightingInput';
 import Invoice from './components/Invoice';
 import InvoiceInput from './components/InvoiceInput';
-import Template from './components/Template'
 import { PDFViewer } from '@react-pdf/renderer';
 import { Routes, Route } from 'react-router-dom'
 import { RecoilRoot } from 'recoil';
@@ -40,9 +38,14 @@ function App() {
 
           <Route path='/moonlighting-input' element={<MoonlightingInput />} />
           <Route path='/moonlighting' element={
+            // <div style={{display: 'flex', flexDirection: 'row'}}>
             <PDFViewer height={window.innerHeight} width={'100%'}>
-              <Moonlighting />
+              <RecoilRoot>
+                <Moonlighting />
+              </RecoilRoot>
             </PDFViewer>
+            // <MoonlightingInput/>
+            // </div>
           } />
 
         </Routes>

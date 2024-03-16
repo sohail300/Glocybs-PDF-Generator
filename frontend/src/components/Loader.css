@@ -16,7 +16,7 @@
     height: 100px;
     border-radius: 50%;
     border: 10px solid #ddd;
-    border-top-color: orange;
+    border-top-color: #21FEEB;
     animation: loading 1s linear infinite;
   }
   

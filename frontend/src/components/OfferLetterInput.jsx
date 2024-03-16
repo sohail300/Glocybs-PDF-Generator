@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const NDABondInput = () => {
+const OfferLetterInput = () => {
+  const navigate= useNavigate();
   const [name, setName] = useState('');
   const [position, setPosition] = useState('');
+  const [period, setPeriod] = useState('');
   const [post, setPost] = useState('');
   const [day, setDay] = useState('');
   const [month, setMonth] = useState('');
@@ -15,6 +18,10 @@ const NDABondInput = () => {
 
   function handlePosition(e) {
     setPosition(e.target.value);
+  }
+
+  function handlePeriod(e) {
+    setPeriod(e.target.value);
   }
 
   function handlePost(e) {
@@ -37,13 +44,14 @@ const NDABondInput = () => {
     setStipend(e.target.value);
   }
 
-  function handleSubmit(e) {
+  function handleSubmit() {
+    navigate('/offer-letter'); 
   }
 
   return (
     <div className="w-full flex justify-center items-center ">
       <div className="bg-white rounded-xl ml-8 w-2/4 py-16 mt-20 flex flex-col justify-center items-center shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
-        <h1 className="font-medium text-black text-2xl mb-8 uppercase text-center"> Form</h1>
+        <h1 className="font-medium text-black text-2xl mb-8 uppercase text-center">Offer Letter Form</h1>
         <div className="flex flex-col justify-center items-start w-2/4">
           <input
             type="text"
@@ -95,9 +103,16 @@ const NDABondInput = () => {
           <input
             type="text"
             className="bg-white w-full rounded-md p-2 mb-4 placeholder-black placeholder-opacity-75 border border-solid border-gray1 focus:outline-none focus:border-gray2"
-            placeholder="Stipend"
+            placeholder="Package"
             onChange={handleStipend}
             value={stipend}
+          />
+          <input
+            type="text"
+            className="bg-white w-full rounded-md p-2 mb-4 placeholder-black placeholder-opacity-75 border border-solid border-gray1 focus:outline-none focus:border-gray2"
+            placeholder="Internship/Training Period"
+            onChange={handlePeriod}
+            value={period}
           />
           <input
             className="cursor-pointer rounded-md bg-outerspace text-black w-full p-2 outline-none shadow-sm shadow-black font-medium "
@@ -111,4 +126,4 @@ const NDABondInput = () => {
   )
 }
 
-export default NDABondInput
+export default OfferLetterInput
