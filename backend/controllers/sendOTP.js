@@ -14,21 +14,22 @@ const transporter = nodemailer.createTransport({
 
 async function sendOTP(req, res) {
   const email = req.body.email;
-  const admin = Admin.findOne({ email: email });
+  const admin = Admin.findOne({ email });
 
+  console.log(admin)
   if (!admin) {
     return res.status(403).send("User doesnt exist");
-  } else {
-    const otp = generateOtp();
-    const info = await transporter.sendMail({
-      from: `"E-Kaksha" <ekaksha2001@gmail.com>`,
-      to: `${email}`,
-      subject: "OTP Verification",
-      html: `Your <b>Forgot Password</b> verification code is: <b>${otp}</b>`,
-    });
-    console.log("Message sent:", info.messageId);
-    res.status(200).json({ email: email, otp: otp });
   }
+  const otp = generateOtp();
+  console.log(otp)
+  const info = await transporter.sendMail({
+    from: `"E-Kaksha" <ekaksha2001@gmail.com>`,
+    to: `${email}`,
+    subject: "OTP Verification",
+    html: `Your <b>Forgot Password</b> verification code is: <b>${otp}</b>`,
+  });
+  console.log("Message sent:", info.messageId);
+  return res.status(200).json({ email: email, otp: otp });
 }
 
 export default sendOTP

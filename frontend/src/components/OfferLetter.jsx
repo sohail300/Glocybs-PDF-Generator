@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     fontSize: 12,
     fontFamily: 'Helvetica',
+    color: '#282828',
   },
   backgroundImage: {
     position: 'absolute',
@@ -127,7 +128,7 @@ const OfferLetter = () => {
               <Text>{currentDate}</Text>
             </View>
             <View style={styles.content}>
-              <Text>Dear {name}, </Text>
+              <Text>Dear {name},</Text>
             </View>
             <View style={styles.content}>
               <Text>Congratulations! We are pleased to confirm that you have been selected to work for <Text style={{ fontFamily: 'Helvetica-Bold' }}>GLOCYBS Pvt. Ltd.</Text> We are delighted to make you the following job offer:</Text>

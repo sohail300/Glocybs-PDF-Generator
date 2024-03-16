@@ -28,7 +28,7 @@ async function changepassword(req, res) {
         const hashedPassword = await bcrypt.hash(password, saltRounds);
         admin.password = hashedPassword;
         await admin.save();
-        return res.status(200).send("Password Changed!");
+        return res.status(200).json({msg: "Password Changed!"});
     }
 }
 

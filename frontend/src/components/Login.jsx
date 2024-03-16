@@ -37,7 +37,6 @@ const Login = () => {
             email,
             password,
         });
-        console.log(response.data)
         localStorage.setItem("token", response.data);
         navigate("/home");
     }
@@ -70,7 +69,7 @@ const Login = () => {
                                 value="LOGIN"
                                 onClick={handleLogin}
                             />
-                            <p className=" mt-6 text-linkblue cursor-pointer">Forgot Password</p>
+                            <p className=" mt-6 text-linkblue cursor-pointer" onClick={() => {navigate('/forgot-password')}}>Forgot Password</p>
                         </div>
                     </div>
                 </div>

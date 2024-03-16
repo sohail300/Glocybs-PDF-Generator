@@ -47,11 +47,10 @@ const OfferLetterInput = () => {
     setStipend(e.target.value);
   }
 
-  function handleSubmit() {
+  function handleView() {
     if (name == '' || day == '' || month == '' || year == '' || position == '' || period == '' || post == '' || stipend == '') {
       alert('Enter Details!')
     } else {
-      navigate('/offer-letter');
       const queryParams = new URLSearchParams({
         name,
         position,
@@ -62,7 +61,25 @@ const OfferLetterInput = () => {
         year,
         stipend
       }).toString();
-      navigate(`/offer-letter?${queryParams}`);
+      navigate(`/offer-letter-view?${queryParams}`);
+    }
+  }
+
+  function handleDownload() {
+    if (name == '' || day == '' || month == '' || year == '' || position == '' || period == '' || post == '' || stipend == '') {
+      alert('Enter Details!')
+    } else {
+      const queryParams = new URLSearchParams({
+        name,
+        position,
+        period,
+        post,
+        day,
+        month,
+        year,
+        stipend
+      }).toString();
+      navigate(`/offer-letter-download?${queryParams}`);
     }
   }
 
@@ -163,12 +180,20 @@ const OfferLetterInput = () => {
             onChange={handlePeriod}
             value={period}
           />
+          <div className=" flex flex-row justify-between w-full">
           <input
-            className="cursor-pointer rounded-md bg-outerspace text-black w-full p-2 outline-none shadow-sm shadow-black font-medium "
+            className="cursor-pointer rounded-md bg-outerspace text-black w-2/5 p-2 outline-none shadow-sm shadow-black font-medium"
             type="submit"
-            value="SUBMIT APPLICATION"
-            onClick={handleSubmit}
+            value="VIEW PDF"
+            onClick={handleView}
           />
+          <input
+            className="cursor-pointer rounded-md bg-outerspace text-black w-2/5 p-2 outline-none shadow-sm shadow-black font-medium "
+            type="submit"
+            value="DOWNLOAD PDF"
+            onClick={handleDownload}
+          />
+          </div>
         </div>
       </div>
     </div>

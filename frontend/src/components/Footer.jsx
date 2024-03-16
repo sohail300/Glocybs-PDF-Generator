@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, Image } from '@react-pdf/renderer';
+import { Text, View, Image, Link } from '@react-pdf/renderer';
 
 const Footer = () => {
   return (
@@ -7,20 +7,20 @@ const Footer = () => {
             <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
               <Image src={'./globe.png'} style={{ width: 16, height: 16, marginRight: '8px' }} />
               <View>
-                <Text>www.glocybs.com</Text>
-                <Text>admin@glocybs.com</Text>
+              <Link src='https://glocybs.com/' style={{color: '#282828', textDecoration: 'none'}}>www.glocybs.com</Link>
+              <Link src='mailto:admin@glocybs.com' style={{color: '#282828', textDecoration: 'none'}}>admin@glocybs.com</Link>
               </View>
             </View>
             <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
               <Image src={'./linkedin.png'} style={{ width: 16, height: 18, marginRight: '8px' }} />
               <View>
-                <Text>/glocybs</Text>
+              <Link src='https://www.linkedin.com/company/glocybs/' style={{color: '#282828', textDecoration: 'none'}}>/glocybs</Link>
               </View>
             </View>
             <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
               <Image src={'./insta.png'} style={{ width: 16, height: 18, marginRight: '8px' }} />
               <View>
-                <Text>/glocybs</Text>
+              <Link src='https://www.instagram.com/glocybs/' style={{color: '#282828', textDecoration: 'none'}}>/glocybs</Link>
               </View>
             </View>
           </View>
