@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
   },
   content: {
     marginBottom: '10px',
+    lineHeight: 1.3
   }
 });
 

@@ -70,7 +70,7 @@ const OfferLetter = () => {
     },
     content: {
       marginBottom: '10px',
-      marginTop: '10px',
+      lineHeight: 1.3
     },
     section: {
       margin: 10,

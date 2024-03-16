@@ -1,20 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const NDABondInput = () => {
+const NDAInput = () => {
   const navigate = useNavigate();
   const [name, setName] = useState('');
-  const [position, setPosition] = useState('');
   const [day, setDay] = useState('');
   const [month, setMonth] = useState('');
   const [year, setYear] = useState('');
 
   function handleName(e) {
     setName(e.target.value);
-  }
-
-  function handlePosition(e) {
-    setPosition(e.target.value);
   }
 
   function handleDay(e) {
@@ -30,7 +25,7 @@ const NDABondInput = () => {
   }
 
   function handleSubmit() {
-    navigate('/nda-bond');
+    navigate('/nda');
   }
 
   return (
@@ -45,16 +40,6 @@ const NDABondInput = () => {
             onChange={handleName}
             value={name}
           />
-
-          <select
-            className="bg-white w-full rounded-md p-2 mb-4 placeholder-black placeholder-opacity-75 border border-solid border-gray1 focus:outline-none focus:border-gray2"
-            onChange={handlePosition}
-            value={position}
-          >
-            <option value="" disabled selected>Select Position</option>
-            <option value="internship">Internship</option>
-            <option value="full-time">Full-time</option>
-          </select>
 
           <div className=" font-medium">STARTING DATE</div>
           <div className=" flex flex-row justify-between mb-4">
@@ -92,4 +77,4 @@ const NDABondInput = () => {
   )
 }
 
-export default NDABondInput
+export default NDAInput

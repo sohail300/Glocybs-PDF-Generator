@@ -3,8 +3,10 @@ import Login from './components/Login';
 import Home from './components/Home';
 import OfferLetter from './components/OfferLetter';
 import OfferLetterInput from './components/OfferLetterInput';
-import NDABond from './components/NDABond';
-import NDABondInput from './components/NDABondInput';
+import NDA from './components/NDA';
+import NDAInput from './components/NDAInput';
+import Bond from './components/Bond';
+import BondInput from './components/BondInput';
 import Moonlighting from './components/Moonlighting';
 import MoonlightingInput from './components/MoonlightingInput';
 import Invoice from './components/Invoice';
@@ -29,23 +31,25 @@ function App() {
             </PDFViewer>
           } />
 
-          <Route path='/nda-bond-input' element={<NDABondInput />} />
-          <Route path='/nda-bond' element={
+          <Route path='/nda-input' element={<NDAInput />} />
+          <Route path='/nda' element={
             <PDFViewer height={window.innerHeight} width={'100%'}>
-              <NDABond />
+              <NDA />
+            </PDFViewer>
+          } />
+
+          <Route path='/bond-input' element={<BondInput />} />
+          <Route path='/bond' element={
+            <PDFViewer height={window.innerHeight} width={'100%'}>
+              <Bond />
             </PDFViewer>
           } />
 
           <Route path='/moonlighting-input' element={<MoonlightingInput />} />
           <Route path='/moonlighting' element={
-            // <div style={{display: 'flex', flexDirection: 'row'}}>
             <PDFViewer height={window.innerHeight} width={'100%'}>
-              <RecoilRoot>
-                <Moonlighting />
-              </RecoilRoot>
+              <Moonlighting />
             </PDFViewer>
-            // <MoonlightingInput/>
-            // </div>
           } />
 
         </Routes>
