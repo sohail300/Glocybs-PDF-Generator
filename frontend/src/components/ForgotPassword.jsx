@@ -7,8 +7,7 @@ const ForgotPassword = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [usedEmail, setUsedEmail] = useState("");
-    const [OTP, setOTP] = useState("");
-    const [sentOTP, setSentOTP] = useState("");
+    const [otp, setOTP] = useState("");
     const [password, setPassword] = useState("");
     const [changePasswordInput, setChangePasswordInput] = useState(false);
     const [sendOTPButton, setSendOTPButton] = useState(true);
@@ -33,15 +32,16 @@ const ForgotPassword = () => {
     async function sendOTP() {
         const response = await api.post(
             "/auth/sendotp", { email });
-        console.log(response.data);
-        setSentOTP(response.data.otp);
         setUsedEmail(response.data.email);
         setSendOTPButton(false);
         setVerifyOTPButton(true);
     }
 
     async function verifyOTP() {
-        if (sentOTP.length !== 0 && sentOTP.toString() == OTP) {
+        const response = await api.post("/auth/verifyotp", { usedEmail, otp });
+        console.log(response.data);
+
+        if (response.data.flag) {
             setVerifyOTPButton(false);
             setChangePasswordInput(true);
         } else {
@@ -55,20 +55,19 @@ const ForgotPassword = () => {
                 "/auth/changepassword",
                 {
                     sentemail: usedEmail,
-                    password: password
+                    password
                 }
             );
             console.log(response.data);
-            navigate("/"); // Assuming navigate function is defined elsewhere
+            navigate("/");
         } catch (error) {
             console.error("Error changing password:", error);
-            // Handle error (e.g., show error message to the user)
         }
     }
 
     return (
         <div className="w-full flex justify-center items-center ">
-            <div className="bg-white rounded-xl ml-8 w-2/4 py-16 mt-20 flex flex-col justify-center items-center shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
+            <div className="bg-white rounded-xl ml-8 w-2/4 py-12 mt-20 flex flex-col justify-center items-center shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
                 <h1 className="font-medium text-black text-2xl mb-8 uppercase text-center">Forgot Password</h1>
                 <div className="flex flex-col justify-center items-start w-2/4">
                     {
@@ -93,12 +92,13 @@ const ForgotPassword = () => {
                     {
                         verifyOTPButton &&
                         <>
+                        <p>Enter the OTP</p>
                             <input
                                 type="text"
                                 className="bg-white w-full rounded-md p-2 mb-4 placeholder-black placeholder-opacity-75 border border-solid border-gray1 focus:outline-none focus:border-gray2"
                                 placeholder="OTP"
                                 onChange={handleOTP}
-                                value={OTP}
+                                value={otp}
                             />
                             <input
                                 className="cursor-pointer rounded-md bg-outerspace text-black w-full p-2 outline-none shadow-sm shadow-black font-medium "

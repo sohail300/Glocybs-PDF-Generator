@@ -21,17 +21,6 @@ const Login = () => {
         setPassword(e.target.value);
     }
 
-    // async function handleSignup() {
-    //     const response = await api.post("/auth/signup", {
-    //       email: signupEmail,
-    //       password: signupPassword,
-    //     });
-    //     localStorage.setItem("token", response.data);
-    //     setCurrUser("user");
-    //     setIsUserLoggedIn(true);
-    //     navigate("/allcourse");
-    //   }
-
     async function handleLogin() {
         const response = await api.post("/auth/login", {
             email,

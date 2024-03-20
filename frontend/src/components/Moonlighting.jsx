@@ -1,13 +1,10 @@
 /* eslint-disable react/prop-types */
-import { Page, Text, View, Document, StyleSheet, Image, Font, Link } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet, Image, Font } from '@react-pdf/renderer';
 import currentDate from '../utils/currentDate';
 import MyCustomFont from '../assets/fonts/arialmt-normal.ttf'
 import Banner from './Banner';
 import Footer from './Footer';
-import { nameState } from '../store/atoms/details'
-import { useRecoilValue } from 'recoil';
 import ESign from './ESign';
-import { useLocation } from 'react-router-dom';
 
 Font.register({ family: 'ArialMTnormal', src: MyCustomFont });
 

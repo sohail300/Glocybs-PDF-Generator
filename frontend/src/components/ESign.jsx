@@ -1,5 +1,4 @@
-import React from 'react'
-import { Page, Text, View, Document, StyleSheet, Image, Font, Link } from '@react-pdf/renderer';
+import { Text, View, Link } from '@react-pdf/renderer';
 
 const ESign = () => {
   return (

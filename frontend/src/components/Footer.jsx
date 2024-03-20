@@ -1,5 +1,4 @@
-import React from 'react'
-import { Text, View, Image, Link } from '@react-pdf/renderer';
+import { View, Image, Link } from '@react-pdf/renderer';
 
 const Footer = () => {
   return (

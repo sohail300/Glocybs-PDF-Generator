@@ -8,7 +8,7 @@ const passwordInput = z.object({
     password: z.string().min(6, { message: "Minimum 6 characters." }).max(20),
 });
 
-async function changepassword(req, res) {
+async function changePassword(req, res) {
     const parsedInput = passwordInput.safeParse(req.body);
 
     if (parsedInput.success === false) {
@@ -32,4 +32,4 @@ async function changepassword(req, res) {
     }
 }
 
-export default changepassword
+export default changePassword

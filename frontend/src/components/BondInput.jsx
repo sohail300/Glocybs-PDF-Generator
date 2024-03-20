@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { baseURL } from "../utils/config";
 import axios from "axios";
+import Header from "./Header";
 
 const BondInput = () => {
   const navigate = useNavigate();
@@ -75,9 +76,10 @@ const BondInput = () => {
   return (
     isLoading == false &&
     <>
+    <Header />
       <div className="w-full flex justify-center items-center ">
-        <div className="bg-white rounded-xl ml-8 w-2/4 py-16 mt-20 flex flex-col justify-center items-center shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
-          <h1 className="font-medium text-black text-2xl mb-8 uppercase text-center"> Form</h1>
+        <div className="bg-white rounded-xl ml-8 w-2/4 py-12 mt-20 flex flex-col justify-center items-center shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
+          <h1 className="font-medium text-black text-2xl mb-8 uppercase text-center">Bond Form</h1>
           <div className="flex flex-col justify-center items-start w-2/4">
             <input
               type="text"

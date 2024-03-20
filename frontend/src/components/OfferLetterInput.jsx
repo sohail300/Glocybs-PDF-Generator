@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { baseURL } from "../utils/config";
+import Header from "./Header";
 
 const OfferLetterInput = () => {
   const navigate = useNavigate();
@@ -103,8 +104,9 @@ const OfferLetterInput = () => {
   return (
     isLoading==false &&
     <>
+      <Header />
     <div className="w-full flex justify-center items-center ">
-      <div className="bg-white rounded-xl ml-8 w-2/4 py-16 mt-20 flex flex-col justify-center items-center shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
+      <div className="bg-white rounded-xl ml-8 w-2/4 mt-8 py-10 flex flex-col justify-center items-center shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
         <h1 className="font-medium text-black text-2xl mb-8 uppercase text-center">Offer Letter Form</h1>
         <div className="flex flex-col justify-center items-start w-2/4">
           <input

@@ -14,10 +14,10 @@ import InvoiceInput from './components/InvoiceInput';
 import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
 import { Routes, Route } from 'react-router-dom'
 import { RecoilRoot } from 'recoil';
-import { MobilePDFReader, PDFReader } from 'react-read-pdf';
 import ForgotPassword from './components/ForgotPassword';
 import Loader from './components/Loader';
 import Download from './components/Download';
+import CustomInput from './components/CustomInput';
 
 function App() {
 
@@ -83,7 +83,19 @@ function App() {
               <Invoice />
             </PDFViewer>
           } />
-          <Route path='/moonlighting-download' element={
+          <Route path='/invoice-download' element={
+            <PDFDownloadLink document={<Invoice />} fileName="invoice.pdf">
+              {({ blob, url, loading, error }) => (loading ? <Loader /> : <Download />)}
+            </PDFDownloadLink>
+          } />
+
+          <Route path='/custom-input' element={<CustomInput />} />
+          <Route path='/custom-view' element={
+            <PDFViewer height={window.innerHeight} width={'100%'}>
+              <Invoice />
+            </PDFViewer>
+          } />
+          <Route path='/custom-download' element={
             <PDFDownloadLink document={<Invoice />} fileName="invoice.pdf">
               {({ blob, url, loading, error }) => (loading ? <Loader /> : <Download />)}
             </PDFDownloadLink>

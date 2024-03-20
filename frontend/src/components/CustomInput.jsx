@@ -1,10 +1,10 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { baseURL } from "../utils/config";
+import axios from "axios";
 import Header from "./Header";
 
-const NDAInput = () => {
+const CustomInput = () => {
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const [day, setDay] = useState('');
@@ -38,7 +38,7 @@ const NDAInput = () => {
         month: month,
         year: year
       }).toString();
-      navigate(`/nda-view?${queryParams}`);
+      navigate(`/bond-view?${queryParams}`);
     }
   }
 
@@ -52,7 +52,7 @@ const NDAInput = () => {
         month: month,
         year: year
       }).toString();
-      navigate(`/nda-download?${queryParams}`);
+      navigate(`/bond-download?${queryParams}`);
     }
   }
 
@@ -76,10 +76,10 @@ const NDAInput = () => {
   return (
     isLoading == false &&
     <>
-      <Header />
+    <Header />
       <div className="w-full flex justify-center items-center ">
         <div className="bg-white rounded-xl ml-8 w-2/4 py-12 mt-20 flex flex-col justify-center items-center shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
-          <h1 className="font-medium text-black text-2xl mb-8 uppercase text-center">NDA Form</h1>
+          <h1 className="font-medium text-black text-2xl mb-8 uppercase text-center">Custom PDF Form</h1>
           <div className="flex flex-col justify-center items-start w-2/4">
             <input
               type="text"
@@ -125,20 +125,20 @@ const NDAInput = () => {
                 value={year}
               />
             </div>
-          <div className=" flex flex-row justify-between w-full">
-          <input
-              className="cursor-pointer rounded-md bg-outerspace text-black w-2/5 p-2 outline-none shadow-sm shadow-black font-medium "
-              type="submit"
-              value="VIEW PDF"
-              onClick={handleView}
-            />
-            <input
-              className="cursor-pointer rounded-md bg-outerspace text-black w-2/5 p-2 outline-none shadow-sm shadow-black font-medium "
-              type="submit"
-              value="DOWNLOAD PDF"
-              onClick={handleDownload}
-            />
-          </div>
+            <div className=" flex flex-row justify-between w-full">
+              <input
+                className="cursor-pointer rounded-md bg-outerspace text-black w-2/5 p-2 outline-none shadow-sm shadow-black font-medium "
+                type="submit"
+                value="VIEW PDF"
+                onClick={handleView}
+              />
+              <input
+                className="cursor-pointer rounded-md bg-outerspace text-black w-2/5 p-2 outline-none shadow-sm shadow-black font-medium "
+                type="submit"
+                value="DOWNLOAD PDF"
+                onClick={handleDownload}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -146,4 +146,4 @@ const NDAInput = () => {
   )
 }
 
-export default NDAInput
+export default CustomInput

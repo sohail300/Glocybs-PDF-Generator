@@ -1,11 +1,9 @@
 /* eslint-disable react/prop-types */
-import { Page, Text, View, Document, StyleSheet, Image, Font, Link } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet, Image, Font } from '@react-pdf/renderer';
 import currentDate from '../utils/currentDate';
 import MyCustomFont from '../assets/fonts/arialmt-normal.ttf'
 import Banner from './Banner';
 import Footer from './Footer';
-import { nameState } from '../store/atoms/details'
-import { useRecoilValue } from 'recoil';
 import ESign from './ESign';
 
 Font.register({ family: 'ArialMTnormal', src: MyCustomFont });
@@ -134,7 +132,7 @@ const OfferLetter = () => {
               <Text>Congratulations! We are pleased to confirm that you have been selected to work for <Text style={{ fontFamily: 'Helvetica-Bold' }}>GLOCYBS Pvt. Ltd.</Text> We are delighted to make you the following job offer:</Text>
             </View>
             <View style={styles.content}>
-              <Text>The position we are offering you is that of <Text style={{ fontFamily: 'Helvetica-Bold' }}>{position}</Text> in <Text style={{ fontFamily: 'Helvetica-Bold' }}>{post}</Text> for a period of <Text style={{ fontFamily: 'Helvetica-Bold' }}>{period}</Text>. This position reports directly to the manager.</Text>
+              <Text>The position we are offering you is that of <Text style={{ fontFamily: 'Helvetica-Bold' }}>{position}</Text> in <Text style={{ fontFamily: 'Helvetica-Bold' }}>{post}</Text> for a period of <Text style={{ fontFamily: 'Helvetica-Bold' }}>{period}</Text> months. This position reports directly to the manager.</Text>
             </View>
             <View style={styles.content}>
               <Text>We would like you to start work on <Text style={{ fontFamily: 'Helvetica-Bold' }}>{day} {month}, {year}</Text>. Please report us for documentation and orientation. If this date is not acceptable, please contact us immediately. On joining, you will be invited to meeting respective team lead, and you may be required to upload your basic documents. </Text>
