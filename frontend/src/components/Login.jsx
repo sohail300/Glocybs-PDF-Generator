@@ -33,7 +33,7 @@ const Login = () => {
     return (
         <>
             <div className=" w-full flex justify-center items-center">
-                <div className=" bg-white rounded-xl ml-8 w-2/4 py-16 mt-20 shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
+                <div className=" bg-white rounded-xl ml-8 w-2/4 py-16 mt-16 shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
                     <div className="flex flex-col justify-center items-center ">
                         <img src="./logo-bg.png" alt="logo" className=" w-40" />
                         <h1 className="font-bold text-black text-5xl mb-8">LOGIN</h1>
