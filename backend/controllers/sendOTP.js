@@ -43,10 +43,10 @@ async function sendOTP(req, res) {
 }
 
 async function verifyOTP(req, res) {
+  const { email, otp } = req.body;
   console.log(req.body)
-  const otp = req.body.otp;
-  const email = req.body.usedEmail;
   const savedOTP = generatedOTP[email];
+  console.log(savedOTP)
   if (savedOTP && savedOTP === otp) {
     // OTP matched
     delete generatedOTP[email]; // Clear OTP after successful verification

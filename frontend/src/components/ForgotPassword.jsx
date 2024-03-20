@@ -38,7 +38,7 @@ const ForgotPassword = () => {
     }
 
     async function verifyOTP() {
-        const response = await api.post("/auth/verifyotp", { usedEmail, otp });
+        const response = await api.post("/auth/verifyotp", { email, otp });
         console.log(response.data);
 
         if (response.data.flag) {
@@ -54,7 +54,7 @@ const ForgotPassword = () => {
             const response = await api.post(
                 "/auth/changepassword",
                 {
-                    sentemail: usedEmail,
+                    email,
                     password
                 }
             );

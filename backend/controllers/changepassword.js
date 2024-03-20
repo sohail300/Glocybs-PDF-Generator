@@ -17,7 +17,7 @@ async function changePassword(req, res) {
         });
     }
 
-    const email = req.body.sentemail;
+    const email = req.body.email;
     const password = parsedInput.data.password;
 
     const admin = await Admin.findOne({ email: email });
