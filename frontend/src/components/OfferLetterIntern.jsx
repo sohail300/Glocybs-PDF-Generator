@@ -126,19 +126,16 @@ const OfferLetter = () => {
               <Text>{currentDate}</Text>
             </View>
             <View style={styles.content}>
-              <Text>Dear {name},</Text>
+              <Text><b>Dear {name},</b></Text>
             </View>
             <View style={styles.content}>
               <Text>Congratulations! We are pleased to confirm that you have been selected to work for <Text style={{ fontFamily: 'Helvetica-Bold' }}>GLOCYBS Pvt. Ltd.</Text> We are delighted to make you the following job offer:</Text>
             </View>
             <View style={styles.content}>
-              <Text>The position we are offering you is that of <Text style={{ fontFamily: 'Helvetica-Bold' }}>{position}</Text> in <Text style={{ fontFamily: 'Helvetica-Bold' }}>{post}</Text> for a period of <Text style={{ fontFamily: 'Helvetica-Bold' }}>{period}</Text> months. This position reports directly to the manager.</Text>
+              <Text>We are pleased to offer you the position of …………. within our esteemed organization. This position will report directly to the Manager who will play a crucial role in shaping the visual identity of GLOCYBS. We would like you  start work on date. Please report to us for documentation and orientation on date. If this date is not acceptable, please contact the HR department of the company immediately. On joining, you will be invited to a meeting with respective team leads, and you may be required to upload your basic documents.</Text>
             </View>
             <View style={styles.content}>
-              <Text>We would like you to start work on <Text style={{ fontFamily: 'Helvetica-Bold' }}>{day} {month}, {year}</Text>. Please report us for documentation and orientation. If this date is not acceptable, please contact us immediately. On joining, you will be invited to meeting respective team lead, and you may be required to upload your basic documents. </Text>
-            </View>
-            <View style={styles.content}>
-              <Text>We are confident you will be able to make a significant contribution to the success of <Text style={{ fontFamily: 'Helvetica-Bold' }}>GLOCYBS</Text> and look forward to working with you.</Text>
+              <Text>We are confident you will be able to make a significant contribution to the success of GLOCYBS  and look  forward to working with you.</Text>
             </View>
             <View style={styles.content}>
               <Text>Best regards, </Text>

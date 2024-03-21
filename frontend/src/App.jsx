@@ -1,8 +1,10 @@
 import './App.css'
 import Login from './components/Login';
 import Home from './components/Home';
-import OfferLetter from './components/OfferLetter';
-import OfferLetterInput from './components/OfferLetterInput';
+import OfferLetterIntern from './components/OfferLetterIntern';
+import OfferLetterInternInput from './components/OfferLetterInternInput';
+import OfferLetterEmployee from './components/OfferLetterEmployee';
+import OfferLetterEmployeeInput from './components/OfferLetterEmployeeInput';
 import NDA from './components/NDA';
 import NDAInput from './components/NDAInput';
 import Bond from './components/Bond';
@@ -29,14 +31,26 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/forgot-password' element={<ForgotPassword />} />
 
-          <Route path='/offer-letter-input' element={<OfferLetterInput />} />
-          <Route path='/offer-letter-view' element={
+          <Route path='/offer-letter-intern-input' element={<OfferLetterInternInput />} />
+          <Route path='/offer-letter-intern-view' element={
             <PDFViewer height={window.innerHeight} width={'100%'}>
-              <OfferLetter />
+              <OfferLetterIntern />
             </PDFViewer>
           } />
-          <Route path='/offer-letter-download' element={
-            <PDFDownloadLink document={<OfferLetter />} fileName="offer-letter.pdf">
+          <Route path='/offer-letter-intern-download' element={
+            <PDFDownloadLink document={<OfferLetterIntern />} fileName="offer-letter.pdf">
+              {({ blob, url, loading, error }) => (loading ? <Loader /> : <Download />)}
+            </PDFDownloadLink>
+          } />
+
+          <Route path='/offer-letter-employee-input' element={<OfferLetterEmployeeInput />} />
+          <Route path='/offer-letter-employee-view' element={
+            <PDFViewer height={window.innerHeight} width={'100%'}>
+              <OfferLetterEmployee />
+            </PDFViewer>
+          } />
+          <Route path='/offer-letter-employee-download' element={
+            <PDFDownloadLink document={<OfferLetterEmployee />} fileName="offer-letter.pdf">
               {({ blob, url, loading, error }) => (loading ? <Loader /> : <Download />)}
             </PDFDownloadLink>
           } />
