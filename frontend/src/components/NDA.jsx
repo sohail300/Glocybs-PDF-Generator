@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     fontSize: 12,
     fontFamily: 'Helvetica',
+    color: '#282828',
   },
   backgroundImage: {
     position: 'absolute',

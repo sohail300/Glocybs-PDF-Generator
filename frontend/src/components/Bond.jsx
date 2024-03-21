@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffffff',
         fontSize: 12,
         fontFamily: 'Helvetica',
+        color: '#282828',
     },
     backgroundImage: {
         position: 'absolute',
@@ -159,8 +160,8 @@ const Bond = () => {
                                 ensure you can afford the bond amount.</Text>
                         </View>
 
-                        <ESign/>
-                        <Footer/>
+                        <ESign />
+                        <Footer />
 
                     </View>
                 </View>
