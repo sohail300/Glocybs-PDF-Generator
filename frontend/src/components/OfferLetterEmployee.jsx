@@ -22,6 +22,9 @@ const styles = StyleSheet.create({
     height: '100%',
     opacity: 0.9
   },
+  sign: {
+    width: '100px',
+  },
   container: {
     position: 'relative',
     flex: 1,
@@ -147,6 +150,23 @@ const OfferLetter = () => {
             <View style={styles.content}>
               <Text>We are confident you will be able to make a significant contribution to the success of <Text style={{ fontFamily: 'Helvetica-Bold' }}>GLOCYBS</Text> and look  forward to working with you.</Text>
             </View>
+
+            <View style={[styles.content, { marginTop: '20px' }]}>
+              <Text style={{ fontFamily: 'Helvetica-Bold' }}>Best regards,</Text>
+            </View>
+            <View>
+              <Image src={'/sign-black.png'} style={styles.sign} />
+            </View>
+            <View>
+              <Text style={{ fontFamily: 'Helvetica-Bold' }}>Ritu Farswan</Text>
+            </View>
+            <View>
+              <Text style={{ fontFamily: 'Helvetica-Bold' }}>Human resource</Text>
+            </View>
+            <View>
+              <Text style={{ fontFamily: 'Helvetica-Bold' }}>GLOCYBS PVT. LTD.</Text>
+            </View>
+
             <ESign />
           </View>
         </View>
@@ -371,12 +391,15 @@ const OfferLetter = () => {
             </View>
 
             <View style={[styles.content, {marginTop: '20px'}]}>
-              <Text>We recommend that you familiarize yourself with this policy. If you have any questions regarding your employment status or this termination policy, please don’t hesitate to contact the Human Resources department at +91 7351088972 or <Link src='mailto:ritu@glocybs.com' style={{ color: '#282828', textDecoration: 'none' }}>ritu@glocybs.com</Link>.</Text>
+              <Text>We recommend that you familiarize yourself with this policy. If you have any questions regarding your employment status or this termination policy, please don’t hesitate to contact the Human Resources department at <Link src='mailto:ritu@glocybs.com' style={{ color: '#282828', textDecoration: 'none' }}>ritu@glocybs.com</Link>.</Text>
             </View>
 
 
             <View style={[styles.content, { marginTop: '20px' }]}>
               <Text style={{ fontFamily: 'Helvetica-Bold' }}>Best regards,</Text>
+            </View>
+            <View>
+              <Image src={'/sign-black.png'} style={styles.sign} />
             </View>
             <View>
               <Text style={{ fontFamily: 'Helvetica-Bold' }}>Ritu Farswan</Text>

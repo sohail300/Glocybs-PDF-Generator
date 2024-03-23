@@ -21,6 +21,9 @@ const styles = StyleSheet.create({
     height: '100%',
      opacity: 0.9
   },
+  sign: {
+    width: '100px',
+  },
   container: {
     position: 'relative',
     flex: 1,
@@ -335,6 +338,9 @@ const NDABond = () => {
             </View>
             <View>
               <Text>Ritu Farswan </Text>
+            </View>
+            <View>
+              <Image src={'/sign-black.png'} style={styles.sign} />
             </View>
             <View>
               <Text>Human resource  </Text>

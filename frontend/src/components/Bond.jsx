@@ -162,7 +162,6 @@ const Bond = () => {
 
                         <ESign />
                         <Footer />
-
                     </View>
                 </View>
             </Page>
