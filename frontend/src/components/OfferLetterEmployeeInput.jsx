@@ -15,6 +15,10 @@ const OfferLetterInput = () => {
   const [orientatonMonth, setOrientatonMonth] = useState('');
   const [orientatonYear, setOrientatonYear] = useState('');
   const [stipend, setStipend] = useState('');
+  const [dearness, setDearness] = useState('');
+  const [houseRent, setHouseRent] = useState('');
+  const [conveyance, setConveyance] = useState('');
+  const [otherAllowance, setOtherAllowance] = useState('');
   const [isLoading, setIsLoading] = useState(true);
 
   function handleName(e) {
@@ -23,6 +27,26 @@ const OfferLetterInput = () => {
 
   function handlePost(e) {
     setPost(e.target.value);
+  }
+
+  function handleStipend(e) {
+    setStipend(e.target.value);
+  }
+
+  function handleDearness(e) {
+    setDearness(e.target.value);
+  }
+
+  function handleHouseRent(e) {
+    setHouseRent(e.target.value);
+  }
+
+  function handleConveyance(e) {
+    setConveyance(e.target.value);
+  }
+
+  function handleOtherAllowance(e) {
+    setOtherAllowance(e.target.value);
   }
 
   function handleDay(e) {
@@ -49,21 +73,21 @@ const OfferLetterInput = () => {
     setOrientatonYear(e.target.value);
   }
 
-  function handleStipend(e) {
-    setStipend(e.target.value);
-  }
-
   function handleView() {
-    if (name == '' || day == '' || month == '' || year == '' || post == '' || stipend == '' || orientatonDay == '' || orientatonMonth == '' || orientatonYear == '') {
+    if (name == '' || day == '' || month == '' || year == '' || post == '' || stipend == '' || dearness == '' || houseRent == '' || conveyance == '' || otherAllowance == '' || orientatonDay == '' || orientatonMonth == '' || orientatonYear == '') {
       alert('Enter Details!')
     } else {
       const queryParams = new URLSearchParams({
         name,
         post,
+        stipend,
+        dearness,
+        houseRent,
+        conveyance,
+        otherAllowance,
         day,
         month,
         year,
-        stipend,
         orientatonDay,
         orientatonMonth,
         orientatonYear
@@ -73,16 +97,20 @@ const OfferLetterInput = () => {
   }
 
   function handleDownload() {
-    if (name == '' || day == '' || month == '' || year == '' || post == '' || stipend == '' || orientatonDay == '' || orientatonMonth == '' || orientatonYear == '') {
+    if (name == '' || day == '' || month == '' || year == '' || post == '' || stipend == '' || dearness == '' || houseRent == '' || conveyance == '' || otherAllowance == '' || orientatonDay == '' || orientatonMonth == '' || orientatonYear == '') {
       alert('Enter Details!')
     } else {
       const queryParams = new URLSearchParams({
         name,
+        stipend,
+        dearness,
+        houseRent,
+        conveyance,
+        otherAllowance,
         post,
         day,
         month,
         year,
-        stipend,
         orientatonDay,
         orientatonMonth,
         orientatonYear
@@ -209,6 +237,39 @@ const OfferLetterInput = () => {
               onChange={handleStipend}
               value={stipend}
             />
+
+            <input
+              type="text"
+              className="bg-white w-full rounded-md p-2 mb-4 placeholder-black placeholder-opacity-75 border border-solid border-gray1 focus:outline-none focus:border-gray2"
+              placeholder="Dearness Allowance"
+              onChange={handleDearness}
+              value={dearness}
+            />
+
+            <input
+              type="text"
+              className="bg-white w-full rounded-md p-2 mb-4 placeholder-black placeholder-opacity-75 border border-solid border-gray1 focus:outline-none focus:border-gray2"
+              placeholder="House Rent Allowance"
+              onChange={handleHouseRent}
+              value={houseRent}
+            />
+
+            <input
+              type="text"
+              className="bg-white w-full rounded-md p-2 mb-4 placeholder-black placeholder-opacity-75 border border-solid border-gray1 focus:outline-none focus:border-gray2"
+              placeholder="Conveyance Allowance"
+              onChange={handleConveyance}
+              value={conveyance}
+            />
+
+            <input
+              type="text"
+              className="bg-white w-full rounded-md p-2 mb-4 placeholder-black placeholder-opacity-75 border border-solid border-gray1 focus:outline-none focus:border-gray2"
+              placeholder="Other Allowance"
+              onChange={handleOtherAllowance}
+              value={otherAllowance}
+            />
+
             <div className=" flex flex-row justify-between w-full">
               <input
                 className="cursor-pointer rounded-md bg-outerspace text-black w-2/5 p-2 outline-none shadow-sm shadow-black font-medium"

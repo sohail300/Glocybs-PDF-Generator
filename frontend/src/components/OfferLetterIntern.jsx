@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: '100%',
     height: '100%',
-    opacity: 0.8
+     opacity: 0.9
   },
   container: {
     position: 'relative',
@@ -163,7 +163,7 @@ const OfferLetter = () => {
             {/* BANNER */}
             <Banner />
             <View style={styles.heading}>
-              <Text style={{ textAlign: 'center', marginTop: '20px' }}>Annexure A</Text>
+              <Text style={{ textAlign: 'center', marginTop: '10px' }}>Annexure A</Text>
             </View>
             <View style={styles.content}>
               <Text style={styles.subheading}>1. Posting and Work type</Text>
@@ -195,7 +195,7 @@ const OfferLetter = () => {
             {/* BANNER */}
             <Banner />
             <View style={styles.heading}>
-              <Text style={{ textAlign: 'center', marginTop: '20px' }}>Annexure B</Text>
+              <Text style={{ textAlign: 'center', marginTop: '10px' }}>Annexure B</Text>
             </View>
             <View style={styles.content}>
               <Text>These are the proposed benefits for you, and it is subject to eligibility.</Text>

@@ -20,6 +20,7 @@ import ForgotPassword from './components/ForgotPassword';
 import Loader from './components/Loader';
 import Download from './components/Download';
 import CustomInput from './components/CustomInput';
+import Blank from './components/Blank';
 
 function App() {
 
@@ -30,6 +31,13 @@ function App() {
           <Route path='/' element={<Login />} />
           <Route path='/home' element={<Home />} />
           <Route path='/forgot-password' element={<ForgotPassword />} />
+
+          <Route path='/blank' element={
+            <PDFViewer height={window.innerHeight} width={'100%'}>
+              <Blank />
+            </PDFViewer>
+          } />
+          
 
           <Route path='/offer-letter-intern-input' element={<OfferLetterInternInput />} />
           <Route path='/offer-letter-intern-view' element={
