@@ -390,33 +390,91 @@ const OfferLetter = () => {
               </View>
             </View>
 
-            <View style={[styles.content, {marginTop: '20px'}]}>
-              <Text>We recommend that you familiarize yourself with this policy. If you have any questions regarding your employment status or this termination policy, please don’t hesitate to contact the Human Resources department at <Link src='mailto:ritu@glocybs.com' style={{ color: '#282828', textDecoration: 'none' }}>ritu@glocybs.com</Link>.</Text>
-            </View>
+            <View style={styles.content}>
+              <Text style={[styles.subheading, { fontFamily: 'Helvetica-Bold' }]}>8. Non-Compete Clause</Text>
+              <View style={{ paddingLeft: '24px' }}>
+                <Text style={{ marginBottom: '10px', fontFamily: 'Helvetica-Bold' }}>8.1. Non-solicitation of employees:</Text>
 
+                <View style={{ paddingLeft: '32px' }}>
+                  <Text style={{ marginBottom: '10px' }}>8.1.1. The Employee agrees with the Company that for 1 year following the
+                    termination of employment under this Agreement, the Employee will not, directly or indirectly, on the Employee's behalf or for any other person, firm, or company: Solicit, seduce, or attempt to solicit, any employee of the Company or its subsidiaries</Text>
+                </View>
 
-            <View style={[styles.content, { marginTop: '20px' }]}>
-              <Text style={{ fontFamily: 'Helvetica-Bold' }}>Best regards,</Text>
-            </View>
-            <View>
-              <Image src={'/sign-black.png'} style={styles.sign} />
-            </View>
-            <View>
-              <Text style={{ fontFamily: 'Helvetica-Bold' }}>Ritu Farswan</Text>
-            </View>
-            <View>
-              <Text style={{ fontFamily: 'Helvetica-Bold' }}>Human resource</Text>
-            </View>
-            <View>
-              <Text style={{ fontFamily: 'Helvetica-Bold' }}>GLOCYBS PVT. LTD.</Text>
-            </View>
-            <ESign />
-            {/* FOOTER */}
-            <Footer />
+                <Text style={{ marginBottom: '10px', fontFamily: 'Helvetica-Bold' }}>8.2. Non-Competition:</Text>
 
+                <View style={{ paddingLeft: '32px' }}>
+                  <Text style={{ marginBottom: '10px' }}>The Employee further pledges with the Company that for 1 year following the termination of employment under this Agreement, the Employee shall not, directly or indirectly, for themselves or as an agent or employee of any other person, corporation, or company:
+                  </Text>
+
+                  <Text style={{ marginBottom: '10px' }}>8.2.1. Engage in any activity or business that competes with that of the Company, its affiliated companies, or subsidiaries.
+                  </Text>
+                  <Text style={{ marginBottom: '10px', fontFamily: 'Helvetica-Bold' }}>8.2.2. Provide services for:
+                  </Text>
+
+                  <View style={{ paddingLeft: '32px' }}>
+                    <Text style={{ marginBottom: '10px' }}>8.2.2.1. Any client or subcontractor with whom the Company had an active commercial relationship at the time of the Employee's termination or within the six (6) months preceding termination.
+                    </Text>
+                    <Text style={{ marginBottom: '10px' }}>8.2.2.2 Any client or subcontractor with whom the Company was, at the time of the Employee's termination, in active proposal or procurement discussions, or was actively preparing to solicit for business within the next six (6) months, provided the Employee knew or had reasonable cause to know of such preparations.
+                    </Text>
+                  </View>
+
+                </View>
+              </View>
+
+            </View>
           </View>
         </View>
       </Page>
+
+      <Page size="A4" style={styles.page}>
+        <View style={styles.container}>
+          <Image src={'/A4.png'} style={styles.backgroundImage} />
+          <View style={styles.bodyContainer}>
+            {/* BANNER */}
+            <Banner />
+
+            <View style={styles.content}>
+              <Text style={[styles.subheading, { fontFamily: 'Helvetica-Bold' }]}>9. Change of Job Duties</Text>
+              <View style={{ paddingLeft: '24px' }}>
+                <Text style={{ marginBottom: '10px' }}>GLOCYBS may occasionally need to modify job duties to meet changing business needs. When such situations arise, we will strive to ensure the following changes:</Text>
+                <Text style={{ marginBottom: '10px' }}>
+                  <Text style={{fontFamily: 'Helvetica-Bold' }}>9.1. Remain Consistence with the Job Type:</Text>The revised duties will align with the general skillset and experience required for your original position. We won't transfer you to a completely different role outside your expertise.
+                </Text>
+
+                <Text style={{ marginBottom: '10px' }}>9.2. There will be no negative impact on your salary, benefits, or other terms of employment as a result of changes to your job duties.</Text>
+
+                <Text style={{ marginBottom: '10px' }}>9.3. We will provide you with clear explanations for any changes and will welcome your questions and feedback.</Text>
+
+              </View>
+
+              <View style={[styles.content, { marginTop: '20px' }]}>
+                <Text>We recommend that you familiarize yourself with this policy. If you have any questions regarding your employment status or this termination policy, please don’t hesitate to contact the Human Resources department at <Link src='mailto:ritu@glocybs.com' style={{ color: '#282828', textDecoration: 'none' }}>ritu@glocybs.com</Link>.</Text>
+              </View>
+            </View>
+
+
+              <View style={[styles.content, { marginTop: '20px' }]}>
+                <Text style={{ fontFamily: 'Helvetica-Bold' }}>Best regards,</Text>
+              </View>
+              <View>
+                <Image src={'/sign-black.png'} style={styles.sign} />
+              </View>
+              <View>
+                <Text style={{ fontFamily: 'Helvetica-Bold' }}>Ritu Farswan</Text>
+              </View>
+              <View>
+                <Text style={{ fontFamily: 'Helvetica-Bold' }}>Human resource</Text>
+              </View>
+              <View>
+                <Text style={{ fontFamily: 'Helvetica-Bold' }}>GLOCYBS PVT. LTD.</Text>
+              </View>
+              <ESign />
+              <Footer />
+              
+          </View>
+        </View>
+      </Page>
+
     </Document>
   )
 }

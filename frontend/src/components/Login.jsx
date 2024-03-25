@@ -41,7 +41,7 @@ const Login = () => {
                             <input
                                 type="text"
                                 className="bg-white rounded-md p-2 mb-8 placeholder-black placeholder-opacity-75 border border-solid border-gray1 focus:outline-none focus:border-gray2"
-                                placeholder="USERNAME"
+                                placeholder="EMAIL"
                                 onChange={handleEmail}
                                 value={email}
                             />
