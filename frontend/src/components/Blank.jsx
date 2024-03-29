@@ -56,17 +56,15 @@ function Blank() {
           <Image src={'/A4.png'} style={styles.backgroundImage} />
           <View style={styles.bodyContainer}>
 
-            {/* BANNER */}
-            {/* <Banner /> */}
+            <Banner />
 
-            {/* <View style={styles.date}> */}
-              {/* <Text>{currentDate}</Text> */}
-            {/* </View> */}
+            <View style={styles.date}>
+              <Text>{currentDate}</Text>
+            </View>
 
             {/* <ESign /> */}
 
-            {/* FOOTER */}
-            {/* <Footer /> */}
+            <Footer />
           </View>
         </View>
       </Page>

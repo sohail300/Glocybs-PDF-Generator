@@ -284,7 +284,7 @@ const OfferLetter = () => {
             <View style={styles.content}>
               <Text style={[styles.subheading, { fontFamily: 'Helvetica-Bold' }]}>4. Working Hours & Leaves</Text>
               <View style={{ paddingLeft: '24px' }}>
-                <Text style={{ marginBottom: '10px' }}>4.1. The normal office observes a 5 day/week Monday through Friday, from 9.30 A.M. to 06.30 P.M. Sundays are observed as off days. However, being in the service business, you are expected to be on call 24 hours a day.</Text>
+                <Text style={{ marginBottom: '10px' }}>4.1. The normal office observes a 6 day/week Monday through Saturday, from 9.30 A.M. to 06.30 P.M. Sundays are observed as off days. However, being in the service business, you are expected to be on call 24 hours a day.</Text>
                 <Text>4.2. You are entitled to take leave as per the leave policy of the company.</Text>
               </View>
             </View>
@@ -343,7 +343,7 @@ const OfferLetter = () => {
                 <Text style={{ marginBottom: '10px', fontFamily: 'Helvetica-Bold' }}>7.2. Termination by the company without cause:</Text>
 
                 <View style={{ paddingLeft: '32px' }}>
-                  <Text>7.2.1. The Company may terminate your employment at any time, without cause, provided written notice is given to you 30 days before your last day of work, under Section 25F of the Industrial Disputes Act, 1947.</Text>
+                  <Text>7.2.1. The Company may terminate your employment at any time, without cause, provided written notice is given to you 30 days before your last day of work.</Text>
                 </View>
 
                 <Text style={{ marginBottom: '10px', fontFamily: 'Helvetica-Bold' }}>7.3. Termination by Employee:</Text>
@@ -448,7 +448,7 @@ const OfferLetter = () => {
               </View>
 
               <View style={[styles.content, { marginTop: '20px' }]}>
-                <Text>We recommend that you familiarize yourself with this policy. If you have any questions regarding your employment status or this termination policy, please don’t hesitate to contact the Human Resources department at <Link src='mailto:ritu@glocybs.com' style={{ color: '#282828', textDecoration: 'none' }}>ritu@glocybs.com</Link>.</Text>
+                <Text>We recommend that you familiarize yourself with this policy. If you have any questions regarding your employment status or this termination policy, please don’t hesitate to contact the Human Resources department at <Link href='mailto:hr@glocybs.com'>hr@glocybs.com</Link> or <Link href='mailto:admin@glocybs.com'>admin@glocybs.com</Link>.</Text>
               </View>
             </View>
 

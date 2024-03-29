@@ -38,6 +38,7 @@ const Home = () => {
             <div className=' cursor-pointer rounded-lg bg-outerspace text-black py-2 px-4 text-center mb-8 font-medium text-lg outline-none shadow-sm shadow-black uppercase' onClick={() => navigate('/nda-input')}>NDA</div>
             <div className=' cursor-pointer rounded-lg bg-outerspace text-black py-2 px-4 text-center mb-8 font-medium text-lg outline-none shadow-sm shadow-black uppercase' onClick={() => navigate('/bond-input')}>Bond</div>
             <div className=' cursor-pointer rounded-lg bg-outerspace text-black py-2 px-4 text-center mb-8 font-medium text-lg outline-none shadow-sm shadow-black uppercase' onClick={() => navigate('/moonlighting-input')}>Moonlighting</div>
+            <div className=' cursor-pointer rounded-lg bg-outerspace text-black py-2 px-4 text-center mb-8 font-medium text-lg outline-none shadow-sm shadow-black uppercase' onClick={() => navigate('/employee-handbook-input')}>Employee Handbook</div>
             <div className=' cursor-pointer rounded-lg bg-outerspace text-black py-2 px-4 text-center mb-8 font-medium text-lg outline-none shadow-sm shadow-black uppercase' onClick={() => navigate('/invoice-input')}>Invoice</div>
             <div className=' cursor-pointer rounded-lg bg-outerspace text-black py-2 px-4 text-center mb-8 font-medium text-lg outline-none shadow-sm shadow-black uppercase' onClick={() => navigate('/custom-input')}>Custom PDF</div>
           </div>

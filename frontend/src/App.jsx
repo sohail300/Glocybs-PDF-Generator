@@ -21,6 +21,12 @@ import Loader from './components/Loader';
 import Download from './components/Download';
 import CustomInput from './components/CustomInput';
 import Blank from './components/Blank';
+import Termination from './components/Policies/Termination';
+import Asset from './components/Policies/Asset';
+import Probation from './components/Policies/Probation';
+import EmployeeExit from './components/Policies/EmployeeExit';
+import EmployeeHandbookInput from './components/EmployeeHandbookInput';
+import EmployeeHandbook from './components/EmployeeHandbook';
 
 function App() {
 
@@ -37,7 +43,30 @@ function App() {
               <Blank />
             </PDFViewer>
           } />
-          
+
+          <Route path='/termination' element={
+            <PDFViewer height={window.innerHeight} width={'100%'}>
+              <Termination />
+            </PDFViewer>
+          } />
+
+          <Route path='/asset' element={
+            <PDFViewer height={window.innerHeight} width={'100%'}>
+              <Asset />
+            </PDFViewer>
+          } />
+
+          <Route path='/probation' element={
+            <PDFViewer height={window.innerHeight} width={'100%'}>
+              <Probation />
+            </PDFViewer>
+          } />
+
+          <Route path='/employee-exit' element={
+            <PDFViewer height={window.innerHeight} width={'100%'}>
+              <EmployeeExit />
+            </PDFViewer>
+          } />
 
           <Route path='/offer-letter-intern-input' element={<OfferLetterInternInput />} />
           <Route path='/offer-letter-intern-view' element={
@@ -95,6 +124,18 @@ function App() {
           } />
           <Route path='/moonlighting-download' element={
             <PDFDownloadLink document={<Moonlighting />} fileName="moonlighting.pdf">
+              {({ blob, url, loading, error }) => (loading ? <Loader /> : <Download />)}
+            </PDFDownloadLink>
+          } />
+
+          <Route path='/employee-handbook-input' element={<EmployeeHandbookInput />} />
+          <Route path='/employee-handbook-view' element={
+            <PDFViewer height={window.innerHeight} width={'100%'}>
+              <EmployeeHandbook />
+            </PDFViewer>
+          } />
+          <Route path='/employee-handbook-download' element={
+            <PDFDownloadLink document={<EmployeeHandbook />} fileName="employee-handbook.pdf">
               {({ blob, url, loading, error }) => (loading ? <Loader /> : <Download />)}
             </PDFDownloadLink>
           } />

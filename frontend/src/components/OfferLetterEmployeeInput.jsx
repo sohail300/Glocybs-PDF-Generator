@@ -241,7 +241,7 @@ const OfferLetterInput = () => {
             <input
               type="text"
               className="bg-white w-full rounded-md p-2 mb-4 placeholder-black placeholder-opacity-75 border border-solid border-gray1 focus:outline-none focus:border-gray2"
-              placeholder="Dearness Allowance"
+              placeholder="Dearness Allowance (including LPA)"
               onChange={handleDearness}
               value={dearness}
             />
@@ -249,7 +249,7 @@ const OfferLetterInput = () => {
             <input
               type="text"
               className="bg-white w-full rounded-md p-2 mb-4 placeholder-black placeholder-opacity-75 border border-solid border-gray1 focus:outline-none focus:border-gray2"
-              placeholder="House Rent Allowance"
+              placeholder="House Rent Allowance (including LPA)"
               onChange={handleHouseRent}
               value={houseRent}
             />
@@ -257,7 +257,7 @@ const OfferLetterInput = () => {
             <input
               type="text"
               className="bg-white w-full rounded-md p-2 mb-4 placeholder-black placeholder-opacity-75 border border-solid border-gray1 focus:outline-none focus:border-gray2"
-              placeholder="Conveyance Allowance"
+              placeholder="Conveyance Allowance (including LPA)"
               onChange={handleConveyance}
               value={conveyance}
             />
@@ -265,7 +265,7 @@ const OfferLetterInput = () => {
             <input
               type="text"
               className="bg-white w-full rounded-md p-2 mb-4 placeholder-black placeholder-opacity-75 border border-solid border-gray1 focus:outline-none focus:border-gray2"
-              placeholder="Other Allowance"
+              placeholder="Other Allowance (including LPA)"
               onChange={handleOtherAllowance}
               value={otherAllowance}
             />
