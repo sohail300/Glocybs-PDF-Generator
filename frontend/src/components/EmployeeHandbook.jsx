@@ -77,11 +77,11 @@ const EmployeeHandbook = () => {
 
                         <View style={{ paddingLeft: '40px' }}>
                             <View style={{ marginBottom: '10px', lineHeight: 1.3 }}>
-                                <Text><Text style={{ fontFamily: 'Helvetica-Bold' }}>• Anti-Harassment Policy:</Text> GLOCYBS has zero tolerance for harassment of any kind. This policy outlines procedures for reporting and addressing harassment, including sexual harassment. We encourage open communication and a work environment where everyone feels safe and respected.</Text>
+                                <Text><Text style={{ fontFamily: 'Helvetica-Bold' }}>1.1. Anti-Harassment Policy:</Text> GLOCYBS has zero tolerance for harassment of any kind. This policy outlines procedures for reporting and addressing harassment, including sexual harassment. We encourage open communication and a work environment where everyone feels safe and respected.</Text>
                             </View>
 
                             <View style={{ marginBottom: '10px', lineHeight: 1.3 }}>
-                                <Text><Text style={{ fontFamily: 'Helvetica-Bold' }}>• Equal Employment Opportunity:</Text> GLOCYBS is committed to equal opportunity for all employees and qualified applicants for employment. We prohibit discrimination in hiring, promotion, and other employment decisions based on protected characteristics such as race, religion, gender, age, disability, veteran status, or any other characteristic protected by law.</Text>
+                                <Text><Text style={{ fontFamily: 'Helvetica-Bold' }}>1.2. Equal Employment Opportunity:</Text> GLOCYBS is committed to equal opportunity for all employees and qualified applicants for employment. We prohibit discrimination in hiring, promotion, and other employment decisions based on protected characteristics such as race, religion, gender, age, disability, veteran status, or any other characteristic protected by law.</Text>
                             </View>
                         </View>
 
@@ -96,7 +96,7 @@ const EmployeeHandbook = () => {
 
                         <View style={{ paddingLeft: '40px' }}>
                             <View style={{ marginBottom: '10px', lineHeight: 1.3 }}>
-                                <Text><Text style={{ fontFamily: 'Helvetica-Bold' }}>• Limited Remote Work:</Text> Remote work arrangements may be considered on a case-by-case basis and require prior approval from the CEO. Working remotely does not exempt employees from fulfilling their job duties and meeting deadlines.</Text>
+                                <Text><Text style={{ fontFamily: 'Helvetica-Bold' }}>3.1. Limited Remote Work:</Text> Remote work arrangements may be considered on a case-by-case basis and require prior approval from the CEO. Working remotely does not exempt employees from fulfilling their job duties and meeting deadlines.</Text>
                             </View>
                         </View>
 
@@ -124,15 +124,15 @@ const EmployeeHandbook = () => {
 
                         <View style={{ paddingLeft: '40px' }}>
                             <View style={{ marginBottom: '10px', lineHeight: 1.3 }}>
-                                <Text><Text style={{ fontFamily: 'Helvetica-Bold' }}>• Day-to-day communication:</Text> Use official communication channels such as email or communicate with your manager directly for work-related matters.</Text>
+                                <Text><Text style={{ fontFamily: 'Helvetica-Bold' }}>5.1. Day-to-day communication:</Text> Use official communication channels such as email or communicate with your manager directly for work-related matters.</Text>
                             </View>
 
                             <View style={{ marginBottom: '10px', lineHeight: 1.3 }}>
-                                <Text><Text style={{ fontFamily: 'Helvetica-Bold' }}>• HR or Management:</Text> If you have concerns or require assistance, reach out to your HR representative or manager.</Text>
+                                <Text><Text style={{ fontFamily: 'Helvetica-Bold' }}>5.2. HR or Management:</Text> If you have concerns or require assistance, reach out to your HR representative or manager.</Text>
                             </View>
 
                             <View style={{ marginBottom: '10px', lineHeight: 1.3 }}>
-                                <Text><Text style={{ fontFamily: 'Helvetica-Bold' }}>• Escalating Issues:</Text> You can email <Link href='mailto:hr@glocybs.com'>hr@glocybs.com</Link> or <Link href='mailto:admin@glocybs.com'>admin@glocybs.com</Link> to make an appointment with a higher authority for issues that need more attention.</Text>
+                                <Text><Text style={{ fontFamily: 'Helvetica-Bold' }}>5.3. Escalating Issues:</Text> You can email <Link href='mailto:hr@glocybs.com'>hr@glocybs.com</Link> or <Link href='mailto:admin@glocybs.com'>admin@glocybs.com</Link> to make an appointment with a higher authority for issues that need more attention.</Text>
                             </View>
                         </View>
 
@@ -147,11 +147,11 @@ const EmployeeHandbook = () => {
 
                         <View style={{ paddingLeft: '40px' }}>
                             <View style={{ marginBottom: '10px', lineHeight: 1.3 }}>
-                                <Text>• To maintain a productive and engaging virtual work environment, GLOCYBS mandates all team members to keep their cameras turned on throughout planned virtual meetings. This policy fosters greater communication, builds team connections, and allows for a more collaborative experience.</Text>
+                                <Text>7.1. To maintain a productive and engaging virtual work environment, GLOCYBS mandates all team members to keep their cameras turned on throughout planned virtual meetings. This policy fosters greater communication, builds team connections, and allows for a more collaborative experience.</Text>
                             </View>
 
                             <View style={{ marginBottom: '10px', lineHeight: 1.3 }}>
-                                <Text>• We understand that technical difficulties may arise. In such instances, please notify your manager or meeting organizer before the meeting to explain the situation.</Text>
+                                <Text>7.2. We understand that technical difficulties may arise. In such instances, please notify your manager or meeting organizer before the meeting to explain the situation.</Text>
                             </View>
                         </View>
 

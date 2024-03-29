@@ -78,23 +78,23 @@ const Probation = () => {
 
                         <View style={{ paddingLeft: '40px' }}>
                             <View style={{ marginBottom: '10px', lineHeight: 1.3 }}>
-                                <Text>• Job skills and knowledge</Text>
+                                <Text>3.1 Job skills and knowledge</Text>
                             </View>
 
                             <View style={{ marginBottom: '10px', lineHeight: 1.3 }}>
-                                <Text>• Ability to meet job requirements and expectations.</Text>
+                                <Text>3.2 Ability to meet job requirements and expectations.</Text>
                             </View>
 
                             <View style={{ marginBottom: '10px', lineHeight: 1.3 }}>
-                                <Text>• Work quality and productivity.</Text>
+                                <Text>3.3 Work quality and productivity.</Text>
                             </View>
 
                             <View style={{ marginBottom: '10px', lineHeight: 1.3 }}>
-                                <Text>• Teamwork and collaboration</Text>
+                                <Text>3.4 Teamwork and collaboration</Text>
                             </View>
 
                             <View style={{ marginBottom: '10px', lineHeight: 1.3 }}>
-                                <Text>• Professional conduct and work ethic</Text>
+                                <Text>3.5 Professional conduct and work ethic</Text>
                             </View>
                         </View>
 
@@ -130,11 +130,11 @@ const Probation = () => {
 
                         <View style={{ paddingLeft: '40px' }}>
                             <View style={{ marginBottom: '10px', lineHeight: 1.3 }}>
-                                <Text>• The notice period for termination of employment during the probation period is shorter than after the probation ends.</Text>
+                                <Text>7.1 The notice period for termination of employment during the probation period is shorter than after the probation ends.</Text>
                             </View>
 
                             <View style={{ marginBottom: '10px', lineHeight: 1.3 }}>
-                                <Text>• The Company can terminate your employment with written notice of 10 days or by paying you 10 days' salary instead of notice.</Text>
+                                <Text>7.2 The Company can terminate your employment with written notice of 10 days or by paying you 10 days' salary instead of notice.</Text>
                             </View>
                         </View>
 

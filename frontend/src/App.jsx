@@ -27,6 +27,7 @@ import Probation from './components/Policies/Probation';
 import EmployeeExit from './components/Policies/EmployeeExit';
 import EmployeeHandbookInput from './components/EmployeeHandbookInput';
 import EmployeeHandbook from './components/EmployeeHandbook';
+import Leave from './components/Policies/Leave';
 
 function App() {
 
@@ -68,6 +69,12 @@ function App() {
             </PDFViewer>
           } />
 
+          <Route path='/leave' element={
+            <PDFViewer height={window.innerHeight} width={'100%'}>
+              <Leave />
+            </PDFViewer>
+          } />
+
           <Route path='/offer-letter-intern-input' element={<OfferLetterInternInput />} />
           <Route path='/offer-letter-intern-view' element={
             <PDFViewer height={window.innerHeight} width={'100%'}>
@@ -94,7 +101,7 @@ function App() {
 
           <Route path='/nda-input' element={<NDAInput />} />
           <Route path='/nda-view' element={
-            <PDFViewer height={window.innerHeight} width={window.innerWidth}>
+            <PDFViewer height={window.innerHeight} width={'100%'}>
               <NDA />
             </PDFViewer>
           } />

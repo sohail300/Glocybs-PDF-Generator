@@ -88,11 +88,11 @@ const EmployeeExit = () => {
 
                             <View style={{ paddingLeft: '32px' }}>
                                 <View style={{ marginBottom: '10px', lineHeight: 1.3 }}>
-                                    <Text>• <Text style={{ fontFamily: 'Helvetica-Bold' }}>Notice Period buyout: </Text>The notice period for termination of employment during the probation period is shorter than after the probation ends.</Text>
+                                    <Text><Text style={{ fontFamily: 'Helvetica-Bold' }}>2.3.1. Notice Period buyout: </Text>The notice period for termination of employment during the probation period is shorter than after the probation ends.</Text>
                                 </View>
 
                                 <View style={{ marginBottom: '10px', lineHeight: 1.3 }}>
-                                    <Text>• <Text style={{ fontFamily: 'Helvetica-Bold' }}>Notice Period buyout amount: </Text>The Company can terminate your employment with written notice of 10 days or by paying you 10 days' salary instead of notice.</Text>
+                                    <Text><Text style={{ fontFamily: 'Helvetica-Bold' }}>2.3.2. Notice Period buyout amount: </Text>The Company can terminate your employment with written notice of 10 days or by paying you 10 days' salary instead of notice.</Text>
                                 </View>
                             </View>
 
@@ -141,19 +141,19 @@ const EmployeeExit = () => {
                             </View>
                             <View style={{ paddingLeft: '32px' }}>
                                 <View style={{ marginBottom: '10px', lineHeight: 1.3 }}>
-                                    <Text style={{ fontFamily: 'Helvetica-Bold' }}>• Submit Investment Proofs for Tax benefits: </Text>
+                                    <Text style={{ fontFamily: 'Helvetica-Bold' }}>2.9.1. Submit Investment Proofs for Tax benefits: </Text>
                                     <View style={{ paddingLeft: '32px' }}>
-                                        <Text style={{ marginBottom: '10px', lineHeight: 1.3 }}>- As soon as you resign, gather all your investment proof documents to claim Income Tax (IT) benefits. Submit these investment proofs to the payroll team within 3 working days from your resignation date.</Text>
-                                        <Text style={{ marginBottom: '10px', lineHeight: 1.3 }}>- Submitting these papers on time allows the HR/Payroll team to determine the correct tax deductions for your salary during your notice period. This guarantees that you get the maximum tax benefit.</Text>
-                                        <Text style={{ marginBottom: '10px', lineHeight: 1.3 }}>- If you don't submit the proof within 3 days, the HR team might not be able to consider them for tax deductions. This could result in a higher tax amount being withheld from your first salary payment during the notice period.</Text>
+                                        <Text style={{ marginBottom: '10px', lineHeight: 1.3 }}>2.9.1.1. As soon as you resign, gather all your investment proof documents to claim Income Tax (IT) benefits. Submit these investment proofs to the payroll team within 3 working days from your resignation date.</Text>
+                                        <Text style={{ marginBottom: '10px', lineHeight: 1.3 }}>2.9.1.2. Submitting these papers on time allows the HR/Payroll team to determine the correct tax deductions for your salary during your notice period. This guarantees that you get the maximum tax benefit.</Text>
+                                        <Text style={{ marginBottom: '10px', lineHeight: 1.3 }}>2.9.1.3. If you don't submit the proof within 3 days, the HR team might not be able to consider them for tax deductions. This could result in a higher tax amount being withheld from your first salary payment during the notice period.</Text>
                                     </View>
                                 </View>
 
                                 <View style={{ marginBottom: '10px', lineHeight: 1.3 }}>
-                                    <Text style={{ fontFamily: 'Helvetica-Bold' }}>• Outstanding Debts Deducted from First Notice Period Salary: </Text>
+                                    <Text style={{ fontFamily: 'Helvetica-Bold' }}>2.9.2. Outstanding Debts Deducted from First Notice Period Salary: </Text>
                                     <View style={{ paddingLeft: '32px' }}>
-                                        <Text style={{ marginBottom: '10px', lineHeight: 1.3 }}>- Any outstanding company loans or other financial obligations you owe to GLOCYBS (e.g., company advances) will be deducted from your first salary payment during the notice period.</Text>
-                                        <Text style={{ marginBottom: '10px', lineHeight: 1.3 }}>- This ensures that all your financial commitments with GLOCYBS are settled before you receive your final paycheck.</Text>
+                                        <Text style={{ marginBottom: '10px', lineHeight: 1.3 }}>2.9.2.1 Any outstanding company loans or other financial obligations you owe to GLOCYBS (e.g., company advances) will be deducted from your first salary payment during the notice period.</Text>
+                                        <Text style={{ marginBottom: '10px', lineHeight: 1.3 }}>2.9.2.2 This ensures that all your financial commitments with GLOCYBS are settled before you receive your final paycheck.</Text>
                                     </View>
                                 </View>
                             </View>
