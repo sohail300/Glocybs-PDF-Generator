@@ -1,11 +1,23 @@
 import { Admin } from "../db/model.js";
 import { z } from "zod";
 import bcrypt from 'bcrypt'
+import dotenv from "dotenv";
 
-const saltRounds = 10;
+dotenv.config();
+
+// Custom validator function to check password complexity
+function passwordComplexityValidator(value) {
+    const uppercaseRegex = /[A-Z]/;
+    const lowercaseRegex = /[a-z]/;
+    const specialCharRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+    return uppercaseRegex.test(value) && lowercaseRegex.test(value) && specialCharRegex.test(value);
+}
 
 const passwordInput = z.object({
-    password: z.string().min(6, { message: "Minimum 6 characters." }).max(20),
+    password: z.string().min(6, { message: "characters must be between 6 and 20 characters." }).max(20, { message: "characters must be between 6 and 20 characters." }).refine(value => passwordComplexityValidator(value), {
+        message: 'Password must contain at least one uppercase letter, one lowercase letter, and one special character',
+    }),
 });
 
 async function changePassword(req, res) {
@@ -19,16 +31,15 @@ async function changePassword(req, res) {
 
     const email = req.body.email;
     const password = parsedInput.data.password;
-
     const admin = await Admin.findOne({ email: email });
 
     if (!admin) {
-        return res.status(403).send("User doesnt exist");
+        return res.status(403).json({ msg: 'User doesnt exist' });
     } else {
-        const hashedPassword = await bcrypt.hash(password, saltRounds);
+        const hashedPassword = await bcrypt.hash(password, process.env.SALT_ROUNDS);
         admin.password = hashedPassword;
         await admin.save();
-        return res.status(200).json({msg: "Password Changed!"});
+        return res.status(201).json({ msg: 'Password Changed!' });
     }
 }
 

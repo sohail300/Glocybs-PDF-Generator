@@ -140,7 +140,7 @@ const Probation = () => {
 
                         <View style={styles.content}>
                             <Text style={styles.subheading}>8. Contact Information</Text>
-                            <Text>For any questions regarding this Probation Period Policy, please contact the Human Resources department at <Link href='mailto:hr@glocybs.com'>hr@glocybs.com</Link> or <Link href='mailto:admin@glocybs.com'>admin@glocybs.com</Link>.</Text>
+                            <Text>For any questions regarding this Probation Period Policy, please contact the Human Resources department at <Link href='mailto:glocybs_hr@glocybs.com'>glocybs_hr@glocybs.com</Link> or <Link href='mailto:admin@glocybs.com'>admin@glocybs.com</Link>.</Text>
                         </View>
                         
                         <Footer />

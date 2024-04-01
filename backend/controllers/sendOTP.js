@@ -2,7 +2,6 @@ import { Admin } from "../db/model.js";
 import nodemailer from "nodemailer";
 import otpGenerator from 'otp-generator'
 
-
 const transporter = nodemailer.createTransport({
   host: process.env.MAIL_HOST,
   port: process.env.MAIL_PORT,
@@ -14,7 +13,6 @@ const transporter = nodemailer.createTransport({
 });
 
 // Hard-coded OTP for demonstration
-const generatedOTP = {};
 
 async function sendOTP(req, res) {
   const email = req.body.email;
@@ -69,23 +67,27 @@ async function sendOTP(req, res) {
 
   const info = await transporter.sendMail(mailOptions);
   console.log("Message sent:", info.messageId);
-  generatedOTP[email] = otp;
+
+  admin.otp=otp;
+  await admin.save();
 
   return res.status(200).json({ msg: 'Sent!' });
 }
 
 async function verifyOTP(req, res) {
   const { email, otp } = req.body;
-  console.log(req.body)
-  const savedOTP = generatedOTP[email];
-  console.log(savedOTP)
+
+  const admin =Admin.findOne({email});
+
+  const savedOTP = admin.otp;
+
   if (savedOTP && savedOTP === otp) {
-    // OTP matched
-    delete generatedOTP[email]; // Clear OTP after successful verification
-    res.json({ message: 'OTP verified successfully', flag: true });
+    admin.otp=null;
+    await admin.save();
+    return res.status(200).json({ msg: 'OTP verified successfully', flag: true });
   } else {
     // OTP didn't match
-    res.status(400).json({ error: 'Invalid OTP' });
+    return res.status(400).json({ msg: 'Invalid OTP' });
   }
 }
 

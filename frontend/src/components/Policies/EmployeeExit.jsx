@@ -218,7 +218,7 @@ const EmployeeExit = () => {
                         </View>
 
                         <View style={styles.content}>
-                            <Text>Any queries regarding the Employee Exit policy, kindly contact the HR department at <Link href='mailto:hr@glocybs.com'>hr@glocybs.com</Link> or <Link href='mailto:admin@glocybs.com'>admin@glocybs.com</Link>.</Text>
+                            <Text>Any queries regarding the Employee Exit policy, kindly contact the HR department at <Link href='mailto:glocybs_hr@glocybs.com'>glocybs_hr@glocybs.com</Link> or <Link href='mailto:admin@glocybs.com'>admin@glocybs.com</Link>.</Text>
                         </View>
                         <Footer />
                     </View>

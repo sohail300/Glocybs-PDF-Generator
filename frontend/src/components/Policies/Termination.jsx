@@ -150,7 +150,7 @@ const Termination = () => {
                         <View style={styles.content}>
                             <Text>We recommend that you familiarize yourself with this policy. If you have any questions
                                 regarding your employment status or this termination policy, please don't hesitate to
-                                contact the HR department at <Link href='mailto:hr@glocybs.com'>hr@glocybs.com</Link> or <Link href='mailto:admin@glocybs.com'>admin@glocybs.com</Link>.</Text>
+                                contact the HR department at <Link href='mailto:glocybs_hr@glocybs.com'>glocybs_hr@glocybs.com</Link> or <Link href='mailto:admin@glocybs.com'>admin@glocybs.com</Link>.</Text>
                         </View>
                         <Footer />
                     </View>

@@ -132,7 +132,7 @@ const EmployeeHandbook = () => {
                             </View>
 
                             <View style={{ marginBottom: '10px', lineHeight: 1.3 }}>
-                                <Text><Text style={{ fontFamily: 'Helvetica-Bold' }}>5.3. Escalating Issues:</Text> You can email <Link href='mailto:hr@glocybs.com'>hr@glocybs.com</Link> or <Link href='mailto:admin@glocybs.com'>admin@glocybs.com</Link> to make an appointment with a higher authority for issues that need more attention.</Text>
+                                <Text><Text style={{ fontFamily: 'Helvetica-Bold' }}>5.3. Escalating Issues:</Text> You can email <Link href='mailto:glocybs_hr@glocybs.com'>glocybs_hr@glocybs.com</Link> or <Link href='mailto:admin@glocybs.com'>admin@glocybs.com</Link> to make an appointment with a higher authority for issues that need more attention.</Text>
                             </View>
                         </View>
 

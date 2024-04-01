@@ -221,7 +221,7 @@ const Asset = () => {
 
                         <View style={styles.content}>
                             <Text style={styles.subheading}>10. Contact Information:</Text>
-                            <Text>For any questions regarding this policy, please contact the HR Department at <Link href='mailto:hr@glocybs.com'>hr@glocybs.com</Link> or <Link href='mailto:admin@glocybs.com'>admin@glocybs.com</Link>.</Text>
+                            <Text>For any questions regarding this policy, please contact the HR Department at <Link href='mailto:glocybs_hr@glocybs.com'>glocybs_hr@glocybs.com</Link> or <Link href='mailto:admin@glocybs.com'>admin@glocybs.com</Link>.</Text>
                         </View>
 
                     </View>

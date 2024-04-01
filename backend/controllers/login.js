@@ -3,6 +3,9 @@ import jwt from "jsonwebtoken";
 import { secretKey } from "../middleware/auth.js";
 import { z } from "zod";
 import bcrypt from 'bcrypt'
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export const loginInput = z.object({
     email: z
@@ -10,7 +13,7 @@ export const loginInput = z.object({
         .min(1, { message: "This field has to be filled." })
         .max(30)
         .email("Please enter a valid email."),
-    password: z.string().min(6, { message: "Minimum 6 characters." }).max(20),
+    password: z.string().min(6, { message: "characters must be between 6 and 20 characters." }).max(20, { message: "characters must be between 6 and 20 characters." }),
 });
 
 async function login(req, res) {
@@ -29,7 +32,7 @@ async function login(req, res) {
         const admin = await Admin.findOne({ email: email });
 
         if (!admin) {
-            return res.status(403).send("User doesnt exist");
+            return res.status(403).json({ msg: 'Invalid Credentails' });
         } else {
             const match = await bcrypt.compare(password, admin.password);
 
@@ -37,13 +40,14 @@ async function login(req, res) {
                 const token = jwt.sign({ id: admin._id, role: "admin" }, secretKey, {
                     expiresIn: "1h",
                 });
-                return res.status(200).json(token);
+                console.log("Admin saved");
+                return res.status(200).json({ msg: 'Logged in', token });
             } else {
-                return res.status(403).send("Invalid Credentials");
+                return res.status(403).json({ msg: 'Invalid Credentails' });
             }
         }
     } catch (err) {
-        return res.status(500).send({ "Internal Error": err });
+        return res.status(500).json({ msg: 'Internal Error', err });
     }
 }
 
