@@ -7,13 +7,26 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+const salt = parseInt(process.env.SALT_ROUNDS);
+
+// Custom validator function to check password complexity
+function passwordComplexityValidator(value) {
+    const uppercaseRegex = /[A-Z]/;
+    const lowercaseRegex = /[a-z]/;
+    const numberRegex = /[0-9]/;
+
+    return (uppercaseRegex.test(value) || lowercaseRegex.test(value)) && numberRegex.test(value);
+}
+
 export const signupInput = z.object({
     email: z
         .string()
         .min(1, { message: "This field has to be filled." })
         .max(30)
         .email("Please enter a valid email."),
-    password: z.string().min(6, { message: "Password must be between 6 and 20 characters." }).max(20, { message: "Password must be between 6 and 20 characters." }),
+    password: z.string().min(6, { message: "characters must be between 6 and 20 characters." }).max(20, { message: "characters must be between 6 and 20 characters." }).refine(value => passwordComplexityValidator(value), {
+        message: 'Password must contain at least one uppercase letter or one lowercase letter and one special character',
+    }),
 });
 
 async function signup(req, res) {
@@ -22,7 +35,7 @@ async function signup(req, res) {
 
         if (parsedInput.success === false) {
             return res.status(411).json({
-                msg: parsedInput.error.issues[0].message,
+                msg: parsedInput.error
             });
         }
 
@@ -34,7 +47,7 @@ async function signup(req, res) {
         if (user) {
             return res.status(403).json({ msg: 'Admin already Exists' });
         } else {
-            const hashedPassword = await bcrypt.hash(password, process.env.SALT_ROUNDS);
+            const hashedPassword = await bcrypt.hash(password, salt);
             const obj = {
                 email: email,
                 password: hashedPassword,
