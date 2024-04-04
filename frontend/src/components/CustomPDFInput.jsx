@@ -21,11 +21,13 @@ const CustomPDFInput = () => {
     async function sendData(e) {
         try {
             e.preventDefault();
-            const formData = new FormData();
-            formData.append("file", file);
+            const fileData = new FormData();
+            fileData.append("file", file);
+            console.log(fileData)
             console.log(formData)
-            // console.log(file)
-            const response = await axios.post('http://localhost:3000/api/file', formData);
+            const response = await axios.post('http://localhost:3000/api/file', {
+                fileData, formData
+            });
             console.log(response)
         } catch (e) {
             console.log(e)
