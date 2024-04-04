@@ -28,6 +28,8 @@ import EmployeeExit from './components/Policies/EmployeeExit';
 import EmployeeHandbookInput from './components/EmployeeHandbookInput';
 import EmployeeHandbook from './components/EmployeeHandbook';
 import Leave from './components/Policies/Leave';
+import CustomPDFInput from './components/CustomPDFInput';
+import LetterOfRecommendation from './components/LetterOfRecommendation';
 
 function App() {
 
@@ -72,6 +74,12 @@ function App() {
           <Route path='/leave' element={
             <PDFViewer height={window.innerHeight} width={'100%'}>
               <Leave />
+            </PDFViewer>
+          } />
+
+          <Route path='/letter-of-recommendation' element={
+            <PDFViewer height={window.innerHeight} width={'100%'}>
+              <LetterOfRecommendation />
             </PDFViewer>
           } />
 
@@ -159,14 +167,14 @@ function App() {
             </PDFDownloadLink>
           } />
 
-          <Route path='/custom-input' element={<CustomInput />} />
+          <Route path='/custom-input' element={<CustomPDFInput />} />
           <Route path='/custom-view' element={
             <PDFViewer height={window.innerHeight} width={'100%'}>
               <Invoice />
             </PDFViewer>
           } />
           <Route path='/custom-download' element={
-            <PDFDownloadLink document={<Invoice />} fileName="invoice.pdf">
+            <PDFDownloadLink document={<Invoice />} fileName="customPDF.pdf">
               {({ blob, url, loading, error }) => (loading ? <Loader /> : <Download />)}
             </PDFDownloadLink>
           } />

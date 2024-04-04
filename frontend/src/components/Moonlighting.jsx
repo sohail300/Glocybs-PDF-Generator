@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: '100%',
     height: '100%',
-     opacity: 0.9
+    opacity: 0.9
   },
   container: {
     position: 'relative',
@@ -44,7 +44,10 @@ const styles = StyleSheet.create({
   content: {
     marginBottom: '10px',
     lineHeight: 1.3
-  }
+  },
+  sign: {
+    width: '100px',
+  },
 });
 
 function Moonlighting() {
@@ -98,6 +101,9 @@ function Moonlighting() {
               <Text>Sincerely, </Text>
             </View>
 
+            <View>
+              <Image src={'/shivansh-sign-black.png'} style={styles.sign} />
+            </View>
             <View>
               <Text>Shivansh Mishra</Text>
             </View>

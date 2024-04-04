@@ -14,8 +14,10 @@ const EmployeeHandbookInput = () => {
   }
 
   function handleView() {
-    if (name == '') {
-      alert('Enter Details!')
+    const regex = /^[a-zA-Z\s]*$/;
+
+    if (!(regex.test(name)) || name === "") {
+      alert('Enter Valid Name!')
     } else {
       const queryParams = new URLSearchParams({
         name: name,
@@ -25,8 +27,10 @@ const EmployeeHandbookInput = () => {
   }
 
   function handleDownload() {
-    if (name == '') {
-      alert('Enter Details!')
+    const regex = /^[a-zA-Z\s]*$/;
+
+    if (!(regex.test(name)) || name === "") {
+      alert('Enter Valid Name!')
     } else {
       const queryParams = new URLSearchParams({
         name: name,

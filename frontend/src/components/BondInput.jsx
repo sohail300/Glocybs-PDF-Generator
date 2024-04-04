@@ -29,8 +29,13 @@ const BondInput = () => {
   }
 
   function handleView() {
-    if (name == '' || day == '' || month == '' || year == '') {
-      alert('Enter Details!')
+    const regex = /^[a-zA-Z\s]*$/;
+
+    if (!(regex.test(name)) || name === "") {
+      alert('Enter Valid Name!')
+    } else if (day === "" || !(parseInt(day) >= 1 && parseInt(day) <= 31) || month == '' || year === "" || !(parseInt(year) >= 2020 && parseInt(day) <= new Date().getFullYear())) {
+      alert('Enter Valid Date!')
+
     } else {
       const queryParams = new URLSearchParams({
         name: name,
@@ -43,8 +48,13 @@ const BondInput = () => {
   }
 
   function handleDownload() {
-    if (name == '' || day == '' || month == '' || year == '') {
-      alert('Enter Details!')
+    const regex = /^[a-zA-Z\s]*$/;
+
+    if (!(regex.test(name)) || name === "") {
+      alert('Enter Valid Name!')
+    } else if (day === "" || !(parseInt(day) >= 1 && parseInt(day) <= 31) || month == '' || year === "" || !(parseInt(year) >= 2020 && parseInt(day) <= new Date().getFullYear())) {
+      alert('Enter Valid Date!')
+
     } else {
       const queryParams = new URLSearchParams({
         name: name,
@@ -76,7 +86,7 @@ const BondInput = () => {
   return (
     isLoading == false &&
     <>
-    <Header />
+      <Header />
       <div className="w-full flex justify-center items-center ">
         <div className="bg-white rounded-xl ml-8 w-2/4 py-12 mt-20 flex flex-col justify-center items-center shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
           <h1 className="font-medium text-black text-2xl mb-8 uppercase text-center">Bond Form</h1>

@@ -40,7 +40,6 @@ async function login(req, res) {
                 const token = jwt.sign({ id: admin._id, role: "admin" }, secretKey, {
                     expiresIn: "1h",
                 });
-                console.log("Admin saved");
                 return res.status(200).json({ msg: 'Logged in', token });
             } else {
                 return res.status(403).json({ msg: 'Invalid Credentails' });

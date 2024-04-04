@@ -3,6 +3,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import authRoute from "./routes/auth.js";
 import { connectDB } from "./db/conn.js";
+import multer from "multer";
 
 import { authenticate } from "./middleware/auth.js";
 
@@ -23,7 +24,25 @@ app.get("/", (req, res) => {
 app.get("/me", authenticate, (req, res) => {
     const id = req.headers.id;
     const role = req.headers.role;
-    res.json({ id, role });
+    return res.json({ id, role });
+})
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        return cb(null, './files');
+    },
+
+    filename: function (req, file, cb) {
+        return cb(null, `${Math.floor(Math.random() * 100)}.pdf`)
+    }
+})
+
+const upload = multer({ storage });
+
+app.post('/api/file', upload.single('file'), (req, res) => {
+    return res.json({
+        msg: "Sent!"
+    })
 })
 
 app.listen(3000, () => {

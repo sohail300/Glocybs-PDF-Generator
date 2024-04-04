@@ -74,8 +74,19 @@ const OfferLetterInput = () => {
   }
 
   function handleView() {
-    if (name == '' || day == '' || month == '' || year == '' || post == '' || stipend == '' || dearness == '' || houseRent == '' || conveyance == '' || otherAllowance == '' || orientatonDay == '' || orientatonMonth == '' || orientatonYear == '') {
-      alert('Enter Details!')
+    const regex = /^[a-zA-Z\s]*$/;
+    const regexWithNumbers = /^[a-zA-Z0-9\s]*$/;
+
+    if (!(regex.test(name)) || name === "") {
+      alert('Enter Valid Name!')
+    } else if (day === "" || !(parseInt(day) >= 1 && parseInt(day) <= 31) || month == '' || year === "" || !(parseInt(year) >= 2020 && parseInt(year) <= new Date().getFullYear())) {
+      alert('Enter Valid Date!')
+    } else if (orientatonDay === "" || !(parseInt(orientatonDay) >= 1 && parseInt(orientatonDay) <= 31) || orientatonMonth == '' || orientatonYear === "" || !(parseInt(orientatonYear) >= 2020 && parseInt(orientatonYear) <= new Date().getFullYear())) {
+      alert('Enter Valid Orientation Date!')
+    } else if (!(regex.test(post)) || post === "") {
+      alert('Enter Valid Post!')
+    } else if (!(regexWithNumbers.test(stipend)) || stipend === "" || !(regexWithNumbers.test(dearness)) || dearness === "" || !(regexWithNumbers.test(houseRent)) || houseRent === "" || !(regexWithNumbers.test(conveyance)) || conveyance === "" || !(regexWithNumbers.test(otherAllowance)) || otherAllowance === "") {
+      alert('Enter Valid Salary Details!')
     } else {
       const queryParams = new URLSearchParams({
         name,

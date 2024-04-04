@@ -29,8 +29,13 @@ const NDAInput = () => {
   }
 
   function handleView() {
-    if (name == '' || day == '' || month == '' || year == '') {
-      alert('Enter Details!')
+    const regex = /^[a-zA-Z\s]*$/;
+
+    if (!(regex.test(name)) || name === "") {
+      alert('Enter Valid Name!')
+    } else if (day === "" || !(parseInt(day) >= 1 && parseInt(day) <= 31) || month == '' || year === "" || !(parseInt(year) >= 2020 && parseInt(year) <= new Date().getFullYear())) {
+      alert('Enter Valid Date!')
+
     } else {
       const queryParams = new URLSearchParams({
         name: name,
@@ -43,8 +48,13 @@ const NDAInput = () => {
   }
 
   function handleDownload() {
-    if (name == '' || day == '' || month == '' || year == '') {
-      alert('Enter Details!')
+    const regex = /^[a-zA-Z\s]*$/;
+
+    if (!(regex.test(name)) || name === "") {
+      alert('Enter Valid Name!')
+    } else if (day === "" || !(parseInt(day) >= 1 && parseInt(day) <= 31) || month == '' || year === "" || !(parseInt(year) >= 2020 && parseInt(day) <= new Date().getFullYear())) {
+      alert('Enter Valid Date!')
+
     } else {
       const queryParams = new URLSearchParams({
         name: name,
@@ -125,20 +135,20 @@ const NDAInput = () => {
                 value={year}
               />
             </div>
-          <div className=" flex flex-row justify-between w-full">
-          <input
-              className="cursor-pointer rounded-md bg-outerspace text-black w-2/5 p-2 outline-none shadow-sm shadow-black font-medium "
-              type="submit"
-              value="VIEW PDF"
-              onClick={handleView}
-            />
-            <input
-              className="cursor-pointer rounded-md bg-outerspace text-black w-2/5 p-2 outline-none shadow-sm shadow-black font-medium "
-              type="submit"
-              value="DOWNLOAD PDF"
-              onClick={handleDownload}
-            />
-          </div>
+            <div className=" flex flex-row justify-between w-full">
+              <input
+                className="cursor-pointer rounded-md bg-outerspace text-black w-2/5 p-2 outline-none shadow-sm shadow-black font-medium "
+                type="submit"
+                value="VIEW PDF"
+                onClick={handleView}
+              />
+              <input
+                className="cursor-pointer rounded-md bg-outerspace text-black w-2/5 p-2 outline-none shadow-sm shadow-black font-medium "
+                type="submit"
+                value="DOWNLOAD PDF"
+                onClick={handleDownload}
+              />
+            </div>
           </div>
         </div>
       </div>

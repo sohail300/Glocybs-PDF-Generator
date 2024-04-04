@@ -14,8 +14,10 @@ const MoonlightingInput = () => {
   };
 
   function handleView() {
-    if (name == '') {
-      alert('Enter Name!')
+    const regex = /^[a-zA-Z\s]*$/;
+
+    if (!(regex.test(name)) || name === "") {
+      alert('Enter Valid Name!')
     } else {
       const queryParams = new URLSearchParams({ name: name }).toString();
       console.log(queryParams)
@@ -24,8 +26,10 @@ const MoonlightingInput = () => {
   }
 
   function handleDownload() {
-    if (name == '') {
-      alert('Enter Name!')
+    const regex = /^[a-zA-Z\s]*$/;
+    
+    if (!(regex.test(name)) || name === "") {
+      alert('Enter Valid Name!')
     } else {
       const queryParams = new URLSearchParams({ name: name }).toString();
       console.log(queryParams)
