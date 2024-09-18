@@ -4,35 +4,40 @@ import axios from 'axios';
 
 const CustomPDFInput = () => {
     const [values, setValues] = useState(null);
-    const [formData, setFormData] = useState([]);
+    const [details, setDetails] = useState([]);
     const [file, setFile] = useState(null);
+    const [excel, setExcel] = useState(null);
 
     function handleForm(i, e) {
         const { name, value } = e.target;
         console.log(name)
         console.log(value)
 
-        const newFormData = [...formData];
+        const newFormData = [...details];
         newFormData[i] = { ...newFormData[i], [name]: value }
-        setFormData(newFormData)
-        console.log(formData)
+        setDetails(newFormData)
+        console.log(details)
     }
 
-    async function sendData(e) {
-        try {
-            e.preventDefault();
-            const fileData = new FormData();
-            fileData.append("file", file);
-            console.log(fileData)
-            console.log(formData)
-            const response = await axios.post('http://localhost:3000/api/file', {
-                fileData, formData
-            });
-            console.log(response)
-        } catch (e) {
-            console.log(e)
-        }
-    }
+    // async function sendData(e) {
+    //     try {
+    //         e.preventDefault();
+    //         const formData = new FormData();
+    //         formData.append("file", file);
+    //         const formDataExcel = new FormData();
+    //         formDataExcel.append("file", excel);
+    //         console.log(formData)
+    //         console.log(formDataExcel)
+    //         console.log(excel)
+    //         console.log(file)
+    //         const response = await axios.post('http://localhost:3000/api/file',
+    //         formDataExcel, formData
+    //         );
+    //         console.log(response)
+    //     } catch (e) {
+    //         console.log(e)
+    //     }
+    // }
 
     function generateTable() {
         const rows = [];
@@ -69,7 +74,7 @@ const CustomPDFInput = () => {
             <Header />
             <div className="w-full flex justify-center items-center">
                 <div className="bg-white rounded-xl ml-8 w-2/4 py-12 mt-20 flex flex-col justify-center items-center shadow-[0_2px_10px_rgba(0,0,0,0.3)] ">
-                    <form action="" className=' flex flex-col'>
+                    <form action='http://localhost:3000/api/file' method='POST' className=' flex flex-col' encType="multipart/form-data">
 
                         <h1 className="font-medium text-black text-2xl mb-8 uppercase text-center">Custom PDF Form</h1>
                         <div>
@@ -79,8 +84,20 @@ const CustomPDFInput = () => {
                                 placeholder='Select File'
                                 name='file'
                                 accept='.pdf,.doc,.docx'
-                                onChange={(e) => { setFile(e.target.files[0]) }}
+                                onChange={(e) => {
+                                    setFile(e.target.files[0])
+                                }}
                             />
+
+                            <input
+                                type='file'
+                                className='"bg-white rounded-md p-2 mb-4 mr-8 placeholder-black placeholder-opacity-75 border border-solid border-gray1 focus:outline-none focus:border-gray2 w-full'
+                                placeholder='Select File'
+                                name='file'
+                                accept='.xls,.xlsx,.csv'
+                                onChange={(e) => { setExcel(e.target.files[0]) }}
+                            />
+
                             <div className="flex flex-row justify-between items-start ">
                                 <input
                                     type="text"
@@ -94,7 +111,7 @@ const CustomPDFInput = () => {
                                     className="cursor-pointer rounded-md bg-outerspace text-black w-full p-2 outline-none shadow-sm shadow-black font-medium "
                                     type="button"
                                     value="GENERATE TABLE"
-                                    onClick={() => setFormData(new Array(values).fill({}))}
+                                    onClick={() => setDetails(new Array(values).fill({}))}
                                 />
                             </div>
                         </div>
@@ -111,7 +128,7 @@ const CustomPDFInput = () => {
                             className="cursor-pointer rounded-md bg-outerspace text-black mx-auto w-2/4 p-2 outline-none shadow-sm shadow-black font-medium "
                             type="submit"
                             value="SUBMIT"
-                            onClick={(e) => sendData(e)}
+                        // onClick={(e) => sendData(e)}
                         />
                     </form>
                 </div>
